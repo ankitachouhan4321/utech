@@ -1,0 +1,2235 @@
+
+:root {
+    /* Brand Colors */
+    --primary: #ED3237;
+    --primary-hover: #101B35;
+    --secondary: #222D40;
+    --white: #FFFFFF;
+
+    /* U-Tech Brand Aliases */
+    --uh-primary: var(--primary);
+    --uh-primary-hover: #C91F26;
+    --uh-secondary: var(--secondary);
+
+    /* Background Colors */
+    --uh-white: var(--white);
+    --uh-light: #F5F5F5;
+    --uh-bg: #FFFFFF;
+    --uh-bg-light: #f1f1f1;
+
+    /* Typography */
+    --uh-heading: #101B35;
+    --uh-text: #EAEAEA;
+    --uh-text-dark: #101B35;
+    --uh-text-muted: #5F6C80;
+    --uh-muted: #CFCFCF;
+
+    /* Card Colors */
+    --uh-card: rgba(35, 35, 35, 0.78);
+    --uh-card-2: rgba(255, 255, 255, 0.08);
+
+    /* Borders */
+    --uh-border: rgba(255, 255, 255, 0.12);
+    --uh-border-light: #E3E6EC;
+}
+
+
+/* =========================================
+   GLOBAL REUSABLE HEADINGS
+========================================= */
+
+/* Small Section Label */
+.sub-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--uh-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+/* Small Red Diagonal Mark */
+.sub-heading::before {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+
+    background: var(--uh-primary);
+
+    clip-path: polygon(
+        0 0,
+        65% 0,
+        100% 35%,
+        100% 100%,
+        35% 100%,
+        0 65%
+    );
+
+    flex-shrink: 0;
+}
+
+/* Main Section Heading */
+.heading {
+    color: var(--uh-heading);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(32px, 3.2vw, 52px);
+    font-weight: 700;
+
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+
+    margin: 0 0 28px;
+}
+
+
+/* Button Wrapper start*/
+.uh-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Common Button Styles */
+.main-btn,
+.sec-btn {
+    position: relative;
+    isolation: isolate;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    min-height: 58px;
+    padding: 0 30px;
+
+    border: 0;
+    border-radius: 0;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+
+    color: #fff;
+    background: transparent;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    /* Identical diagonal-cut corners */
+    clip-path: polygon(
+        0 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% 100%,
+        14px 100%,
+        0 calc(100% - 14px)
+    );
+
+    transition: color 0.4s ease;
+}
+
+/* Keep Text and Icons Above Background */
+.main-btn span,
+.main-btn i,
+.sec-btn span,
+.sec-btn i {
+    position: relative;
+    z-index: 3;
+}
+
+/* Background Layer */
+.main-btn::before,
+.sec-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: var(--btn-normal);
+}
+
+/* Hover Background Layer */
+.main-btn::after,
+.sec-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: var(--btn-hover);
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition: transform 0.45s ease;
+}
+
+/* Background Fill on Hover */
+.main-btn:hover::after,
+.sec-btn:hover::after {
+    transform: scaleX(1);
+}
+
+/* =========================================
+   MAIN BUTTON - RED TO NAVY
+========================================= */
+
+.main-btn {
+    --btn-normal: #ED3237;
+    --btn-hover: #101B35;
+
+    color: #FFFFFF;
+}
+
+.main-btn:hover {
+    color: #FFFFFF;
+}
+
+/* =========================================
+   SECONDARY BUTTON - NAVY TO WHITE
+========================================= */
+
+.sec-btn {
+    --btn-normal: #222D40;
+    --btn-hover: #FFFFFF;
+
+    color: #FFFFFF;
+}
+
+.sec-btn:hover {
+    color: #101B35;
+}
+
+/* Arrow Animation */
+.main-btn i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.main-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 575px) {
+
+    .uh-buttons {
+        gap: 10px;
+    }
+
+    .main-btn,
+    .sec-btn {
+        min-height: 50px;
+        padding: 0 20px;
+        font-size: 12px;
+        gap: 14px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .main-btn,
+    .sec-btn,
+    .main-btn::after,
+    .sec-btn::after,
+    .main-btn i {
+        transition: none;
+    }
+}
+
+/* button end */
+.uh-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 110px 0 80px;
+  color: var(--uh-white);
+  background: #111;
+}
+
+.uh-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uh-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.58) 38%, rgba(0, 0, 0, 0.76) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.35) 100%);
+  z-index: 1;
+}
+
+.uh-watermark {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: clamp(60px, 11vw, 150px);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.16);
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+  margin: 0;
+}
+
+.uh-hero .container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.uh-hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+}
+
+.uh-hero-left {
+  width: 58%;
+}
+
+.uh-top-text {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--uh-light);
+  margin-bottom: 18px;
+}
+
+.uh-main-heading {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.12;
+  font-weight: 800;
+  margin: 0 0 22px;
+  color: var(--uh-white);
+}
+
+.uh-description {
+  max-width: 760px;
+  font-size: 18px;
+  color: var(--uh-text);
+  margin: 0 0 34px;
+}
+
+.uh-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+.uh-btn-arrow {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--uh-primary);
+  color: var(--uh-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.uh-btn-arrow:hover {
+  background: var(--uh-primary-hover);
+}
+
+.uh-hero-right {
+  width: 35%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.uh-info-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--uh-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 34px 30px;
+  border: 1px solid var(--uh-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.uh-info-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 18px;
+  color: var(--uh-white);
+}
+
+.uh-info-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 24px;
+}
+
+.uh-info-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--uh-text);
+  margin: 0 0 28px;
+}
+
+.uh-stats-box {
+  background: var(--uh-card-2);
+  border-radius: 22px;
+  padding: 26px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.uh-stat-item {
+  flex: 1;
+}
+
+.uh-stat-item h4 {
+  font-size: 54px;
+  line-height: 1;
+  margin: 0 0 12px;
+  color: var(--uh-white);
+  font-weight: 800;
+}
+
+.uh-stat-item p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--uh-light);
+}
+
+.uh-stat-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+@media (max-width: 1199px) {
+  .uh-hero-left {
+    width: 55%;
+  }
+
+  .uh-hero-right {
+    width: 40%;
+  }
+
+  .uh-top-text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 991px) {
+  .uh-hero {
+    padding: 120px 0 70px;
+  }
+
+  .uh-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .uh-hero-left,
+  .uh-hero-right {
+    width: 100%;
+  }
+
+  .uh-info-card {
+    max-width: 100%;
+  }
+
+  .uh-watermark {
+    top: 80px;
+    font-size: 72px;
+  }
+
+  .uh-main-heading {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 767px) {
+  .uh-hero {
+    min-height: auto;
+    padding: 110px 0 90px;
+  }
+
+  .uh-watermark {
+    font-size: 52px;
+    top: 90px;
+  }
+
+  .uh-top-text {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .uh-main-heading {
+    font-size: 34px;
+  }
+
+  .uh-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .uh-hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .uh-btn-primary {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .uh-btn-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .uh-info-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .uh-info-card h3 {
+    font-size: 20px;
+  }
+
+  .uh-info-card p {
+    font-size: 15px;
+  }
+
+  .uh-stats-box {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .uh-stat-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .uh-stat-item h4 {
+    font-size: 40px;
+  }
+
+ 
+}
+
+/* header start */
+
+
+/* Top Header */
+.top-header {
+  background: var(--bs-dark) !important;
+}
+
+.top-header-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 22px;
+  border-right: 1px solid #292929;
+  font-size: 13px;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.top-header-item:first-child {
+  padding-left: 0;
+}
+
+.top-header-item i {
+  color: var(--color-primary);
+}
+
+a.top-header-item:hover {
+  color: var(--color-white);
+}
+
+.site-logo {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.site-header .nav-link {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px 14px !important;
+  transition: color 0.3s;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.active,
+.site-header .dropdown-item:hover {
+  color: var(--color-primary);
+  background-color: transparent !important;
+}
+
+
+.site-header .dropdown-item {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.123);
+}
+
+
+
+.site-header .dropdown-menu {
+  border-radius: 0;
+  border: 1px solid var(--color-border);
+}
+
+.site-header .navbar-toggler {
+  border:none;
+  border-radius: 0;
+}
+
+.site-header .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu[data-bs-popper] {
+      top: 155% !important;
+}
+
+@media (max-width: 1200px) {
+  .site-header .nav-link {
+    padding: 12px 8px !important;}
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 280px;
+    height: calc(100vh - 80px);
+    background: #fff;
+    padding: 20px;
+    z-index: 1050;
+    transform: translateX(-110%);
+    transition: transform 0.35s ease;
+    overflow-y: auto;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.12);
+  }
+
+  .navbar-collapse.collapse.show,
+  .navbar-collapse.collapsing {
+    transform: translateX(0);
+  }
+
+  .navbar-collapse.collapsing {
+    height: calc(100vh - 80px) !important;
+  }
+
+  .navbar {
+    position: relative;
+  }
+  
+  .top-header {
+    display: none;
+  }
+
+  .site-logo {
+    width: 180px;
+  }
+
+  .site-header .navbar {
+    padding: 12px 0;
+  }
+
+  .site-header .navbar-collapse {
+    padding-top: 15px;
+  }
+
+  .site-header .nav-link {
+    padding: 12px 0 !important;
+  }
+
+  .site-header .dropdown-menu {
+    border: 0;
+    padding-left: 12px;
+  }
+}
+
+
+
+/* header end */
+
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.uh-about-section {
+    position: relative;
+    padding: 110px 0 130px;
+    background: var(--uh-bg);
+    overflow: hidden;
+}
+
+.uh-about-section .container {
+    max-width: 1320px;
+}
+
+/* =========================================
+   LEFT IMAGE COMPOSITION
+========================================= */
+
+.uh-about-image-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+
+    padding-bottom: 80px;
+    padding-right: 80px;
+}
+
+/* Main Industrial Image */
+.uh-about-main-image {
+    position: relative;
+
+    width: 100%;
+    height: 560px;
+
+    overflow: hidden;
+
+    background: var(--uh-secondary);
+
+    clip-path: polygon(
+        0 0,
+        85% 0,
+        100% 15%,
+        100% 100%,
+        0 100%
+    );
+}
+
+.uh-about-main-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.uh-about-main-image:hover img {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   EXPERIENCE BADGE
+========================================= */
+
+.uh-about-experience {
+    position: absolute;
+
+    top: 42px;
+    right: -8px;
+
+    width: 200px;
+    min-height: 168px;
+
+    background: var(--uh-primary);
+    color: var(--uh-white);
+
+    padding: 25px;
+
+    z-index: 3;
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% 100%,
+        15px 100%,
+        0 calc(100% - 15px)
+    );
+}
+
+.uh-about-experience h3 {
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 1;
+
+    color: var(--uh-white);
+    margin: 0 0 12px;
+}
+
+.uh-about-experience p {
+    color: var(--uh-white);
+
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+
+    margin: 0;
+}
+
+/* =========================================
+   SMALL OVERLAPPING IMAGE
+========================================= */
+
+.uh-about-small-image {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 280px;
+    height: 330px;
+
+    border: 10px solid var(--uh-white);
+    background: var(--uh-white);
+
+    z-index: 2;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.uh-about-small-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.uh-about-small-image {
+    overflow: hidden;
+}
+
+.uh-about-small-image:hover img {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   RIGHT ABOUT CONTENT
+========================================= */
+
+.uh-about-content {
+    padding-left: 35px;
+    max-width: 680px;
+}
+
+.uh-about-content .heading {
+    margin-bottom: 28px;
+}
+
+.uh-about-description {
+    color: var(--uh-text-muted);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    margin: 0 0 20px;
+}
+
+.uh-about-description:last-of-type {
+    margin-bottom: 0;
+}
+
+/* About Button */
+.uh-about-action {
+    margin-top: 35px;
+}
+
+/* Uses Your Existing .main-btn */
+/* No duplicate button CSS needed */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .uh-about-section {
+        padding: 90px 0 110px;
+    }
+
+    .uh-about-image-wrap {
+        padding-right: 55px;
+    }
+
+    .uh-about-main-image {
+        height: 490px;
+    }
+
+    .uh-about-experience {
+        width: 170px;
+        min-height: 150px;
+        right: -5px;
+    }
+
+    .uh-about-experience h3 {
+        font-size: 52px;
+    }
+
+    .uh-about-small-image {
+        width: 240px;
+        height: 285px;
+    }
+
+    .uh-about-content {
+        padding-left: 10px;
+    }
+
+    .heading {
+        font-size: 40px;
+    }
+}
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .uh-about-section {
+        padding: 80px 0;
+    }
+
+    .uh-about-image-wrap {
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .uh-about-main-image {
+        height: 520px;
+    }
+
+    .uh-about-content {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .heading {
+        font-size: 42px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+    .uh-about-section {
+        padding: 65px 0 80px;
+    }
+
+    .uh-about-image-wrap {
+        padding-right: 30px;
+        padding-bottom: 55px;
+        margin-bottom: 25px;
+    }
+
+    .uh-about-main-image {
+        height: 350px;
+    }
+
+    .uh-about-experience {
+        top: 25px;
+        right: 0;
+
+        width: 125px;
+        min-height: 115px;
+
+        padding: 15px;
+    }
+
+    .uh-about-experience h3 {
+        font-size: 38px;
+        margin-bottom: 6px;
+    }
+
+    .uh-about-experience p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .uh-about-small-image {
+        width: 165px;
+        height: 195px;
+
+        border: 6px solid var(--uh-white);
+    }
+
+    .sub-heading {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        margin-bottom: 18px;
+    }
+
+    .heading {
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -0.8px;
+        margin-bottom: 20px;
+    }
+
+    .uh-about-description {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 16px;
+    }
+
+    .uh-about-action {
+        margin-top: 28px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .uh-about-main-image img,
+    .uh-about-small-image img {
+        transition: none;
+    }
+}
+
+/* about-sec end */
+
+
+/* =========================================
+   U-TECH HYDRAULIC MOVING STRIPS
+========================================= */
+
+.uh-moving-strips {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: var(--uh-white);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* =========================================
+   COMMON STRIP DESIGN
+========================================= */
+
+.uh-strip {
+    position: absolute;
+    top: 50%;
+    left: -8%;
+    width: 116%;
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* Navy Strip */
+.uh-strip-navy {
+    background: var(--uh-heading, #101B35);
+    transform: translateY(-50%) rotate(2.5deg);
+    z-index: 1;
+}
+
+/* Red Strip */
+.uh-strip-red {
+    background: var(--uh-primary, #ED3237);
+    transform: translateY(-50%) rotate(-2.5deg);
+    z-index: 2;
+}
+
+/* =========================================
+   INFINITE SCROLL TRACK
+========================================= */
+
+.uh-strip-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    min-width: max-content;
+    height: 100%;
+
+    will-change: transform;
+}
+
+.uh-strip-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    height: 100%;
+    gap: 38px;
+    padding-right: 38px;
+}
+
+/* =========================================
+   STRIP TYPOGRAPHY
+========================================= */
+
+.uh-strip-text {
+    display: inline-block;
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Solid Text */
+.uh-strip-text.solid {
+    color: var(--uh-white, #fff);
+}
+
+/* Outline Text */
+.uh-strip-text.outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
+}
+
+/* Stars */
+.uh-strip-star {
+    flex-shrink: 0;
+    font-size: 26px;
+    line-height: 1;
+}
+
+/* Navy Stars */
+.uh-strip-navy .uh-strip-star {
+    color: var(--uh-primary, #ED3237);
+}
+
+/* Red Stars */
+.uh-strip-red .uh-strip-star {
+    color: var(--uh-white, #fff);
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+/* Left to Right */
+.uh-move-right {
+    animation: uh-marquee-right 50s linear infinite;
+}
+
+/* Right to Left */
+.uh-move-left {
+    animation: uh-marquee-left 50s linear infinite;
+}
+
+@keyframes uh-marquee-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes uh-marquee-right {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .uh-moving-strips {
+        height: 210px;
+    }
+
+    .uh-strip {
+        height: 72px;
+    }
+
+    .uh-strip-text {
+        font-size: 30px;
+    }
+
+    .uh-strip-group {
+        gap: 28px;
+        padding-right: 28px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 575px) {
+
+    .uh-moving-strips {
+        height: 160px;
+    }
+
+    .uh-strip {
+        left: -18%;
+        width: 136%;
+        height: 55px;
+    }
+
+    .uh-strip-text {
+        font-size: 21px;
+        letter-spacing: 0.5px;
+    }
+
+    .uh-strip-group {
+        gap: 20px;
+        padding-right: 20px;
+    }
+
+    .uh-strip-star {
+        font-size: 18px;
+    }
+
+    .uh-strip-navy {
+        transform: translateY(-50%) rotate(5deg);
+    }
+
+    .uh-strip-red {
+        transform: translateY(-50%) rotate(-5deg);
+    }
+
+    .uh-move-left,
+    .uh-move-right {
+        animation-duration: 22s;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .uh-move-left,
+    .uh-move-right {
+        animation: none;
+    }
+}
+
+ /* moving-strips end */
+
+
+/* =========================================
+   U-TECH HYDRAULIC FOOTER
+========================================= */
+
+.uh-footer {
+    position: relative;
+    margin-top: 150px;
+    background: #071127;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =========================================
+   NEWSLETTER OVERLAPPING BANNER
+========================================= */
+
+.uh-footer-newsletter-wrap {
+    position: relative;
+    z-index: 3;
+    margin-bottom: -150px;
+    transform: translateY(-150px);
+}
+
+.uh-footer-newsletter-wrap .container {
+    max-width: 1320px;
+}
+
+.uh-footer-newsletter {
+    position: relative;
+    min-height: 265px;
+    padding: 60px 65px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    background: var(--primary);
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 42px) 0,
+        100% 42px,
+        100% 100%,
+        42px 100%,
+        0 calc(100% - 42px)
+    );
+}
+
+/* Industrial Image Background */
+.uh-footer-newsletter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(237, 50, 55, 0.92),
+            rgba(190, 20, 35, 0.88)
+        ),
+        url("/images/footer/industrial-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+}
+
+/* Newsletter Left Content */
+.uh-newsletter-content {
+    flex: 1;
+    max-width: 510px;
+}
+
+.uh-newsletter-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+
+    margin-bottom: 18px;
+}
+
+.uh-newsletter-label i {
+    font-size: 8px;
+}
+
+.uh-newsletter-content h2 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+/* =========================================
+   NEWSLETTER FORM
+========================================= */
+
+.uh-newsletter-form {
+    flex: 1;
+    max-width: 510px;
+    min-height: 70px;
+
+    display: flex;
+    align-items: stretch;
+
+    background: #ffffff;
+    padding: 6px;
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% 100%,
+        14px 100%,
+        0 calc(100% - 14px)
+    );
+}
+
+.uh-newsletter-form input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 0 20px;
+    border: 0;
+    outline: none;
+
+    background: transparent;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.uh-newsletter-form input::placeholder {
+    color: #8490a5;
+}
+
+.uh-newsletter-form button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    min-width: 175px;
+    padding: 15px 20px;
+
+    background: #101b35;
+    color: #ffffff;
+    border: 0;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 13px) 0,
+        100% 13px,
+        100% 100%,
+        13px 100%,
+        0 calc(100% - 13px)
+    );
+
+    transition: background 0.3s ease;
+}
+
+.uh-newsletter-form button:hover {
+    background: var(--primary-hover);
+}
+
+.uh-newsletter-form button i {
+    font-size: 13px;
+}
+
+/* =========================================
+   MAIN FOOTER BACKGROUND
+========================================= */
+
+.uh-footer-main {
+    position: relative;
+    padding: 80px 0 80px;
+
+    background-color: #071127;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 84px 84px;
+}
+
+.uh-footer-main .container {
+    max-width: 1320px;
+}
+
+/* =========================================
+   FOOTER GRID
+========================================= */
+
+.uh-footer-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1.15fr 0.95fr 0.85fr;
+    gap: 65px;
+}
+
+/* =========================================
+   COLUMN 1 - LOGO & ABOUT
+========================================= */
+
+.uh-footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.uh-footer-logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.uh-footer-logo span {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.uh-footer-logo strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.uh-footer-logo b {
+    color: var(--primary);
+}
+
+.uh-footer-about > p {
+    max-width: 315px;
+    color: #aab8d1;
+
+    font-size: 14px;
+    line-height: 1.85;
+    margin: 0;
+}
+
+/* Large Outline Watermark */
+.uh-footer-watermark {
+    margin-top: 35px;
+
+    font-size: clamp(27px, 3vw, 47px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    white-space: nowrap;
+
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+}
+
+.uh-footer-watermark span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+}
+
+/* =========================================
+   COMMON FOOTER HEADINGS
+========================================= */
+
+.uh-footer-title {
+    position: relative;
+
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+
+    margin: 0 0 34px;
+    padding-bottom: 17px;
+}
+
+.uh-footer-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 35px;
+    height: 3px;
+
+    background: var(--primary);
+}
+
+/* =========================================
+   COLUMN 2 - USEFUL LINKS
+========================================= */
+
+.uh-footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 19px;
+}
+
+.uh-footer-links-grid a {
+    display: inline-block;
+
+    color: #aab8d1;
+    font-size: 14px;
+    line-height: 1.7;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.uh-footer-links-grid a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   COLUMN 3 - ADDRESS & EMAIL
+========================================= */
+
+.uh-footer-contact-group {
+    margin-bottom: 30px;
+}
+
+.uh-footer-contact-group:last-child {
+    margin-bottom: 0;
+}
+
+.uh-footer-contact-group p {
+    color: #aab8d1;
+
+    font-size: 14px;
+    line-height: 1.85;
+
+    margin: 0;
+}
+
+.uh-footer-contact-group a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transition: color 0.3s ease;
+}
+
+.uh-footer-contact-group a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   COLUMN 4 - PHONE
+========================================= */
+
+.uh-footer-phone {
+    margin-bottom: 35px;
+}
+
+.uh-footer-phone a {
+    display: block;
+
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.uh-footer-phone a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.uh-footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.uh-footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    background: #1b2841;
+    color: #ffffff;
+
+    font-size: 14px;
+    text-decoration: none;
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 9px) 0,
+        100% 9px,
+        100% 100%,
+        9px 100%,
+        0 calc(100% - 9px)
+    );
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.uh-footer-social a:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.uh-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    background: #071127;
+    padding: 30px 0;
+}
+
+.uh-footer-bottom .container {
+    max-width: 1320px;
+}
+
+.uh-footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.uh-footer-bottom p {
+    color: #aab8d1;
+
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.uh-footer-bottom strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Designed By Credit */
+.uh-footer-credit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.uh-footer-credit a {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.uh-footer-credit a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   SCROLL TO TOP
+========================================= */
+
+.uh-footer-scroll-top {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+
+    background: #071127;
+    color: #ffffff;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.uh-footer-scroll-top:hover {
+    background: var(--primary);
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .uh-footer-newsletter {
+        padding: 45px;
+        gap: 30px;
+    }
+
+    .uh-newsletter-content h2 {
+        font-size: 27px;
+    }
+
+    .uh-footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 55px 45px;
+    }
+
+    .uh-footer-watermark {
+        white-space: normal;
+    }
+}
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .uh-footer {
+        margin-top: 100px;
+    }
+
+    .uh-footer-newsletter-wrap {
+        transform: translateY(-100px);
+        margin-bottom: -100px;
+    }
+
+    .uh-footer-newsletter {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: auto;
+        padding: 45px 35px;
+    }
+
+    .uh-newsletter-content {
+        max-width: 100%;
+    }
+
+    .uh-newsletter-form {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .uh-footer-main {
+        padding: 175px 0 75px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+    .uh-footer {
+        margin-top: 70px;
+    }
+
+    .uh-footer-newsletter-wrap {
+        transform: translateY(-70px);
+        margin-bottom: -70px;
+    }
+
+    .uh-footer-newsletter {
+        padding: 35px 25px;
+        gap: 25px;
+
+        clip-path: polygon(
+            0 0,
+            calc(100% - 25px) 0,
+            100% 25px,
+            100% 100%,
+            25px 100%,
+            0 calc(100% - 25px)
+        );
+    }
+
+    .uh-newsletter-content h2 {
+        font-size: 24px;
+    }
+
+    .uh-newsletter-label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .uh-newsletter-form {
+        min-height: 55px;
+    }
+
+    .uh-newsletter-form input {
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .uh-newsletter-form button {
+        min-width: auto;
+        padding: 0 14px;
+        font-size: 10px;
+        gap: 8px;
+    }
+
+    .uh-footer-main {
+        padding: 125px 0 55px;
+    }
+
+    .uh-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .uh-footer-logo span {
+        font-size: 21px;
+    }
+
+    .uh-footer-logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .uh-footer-watermark {
+        font-size: 34px;
+    }
+
+    .uh-footer-title {
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+
+    .uh-footer-bottom-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .uh-footer-bottom {
+        padding: 25px 0;
+    }
+
+    .uh-footer-scroll-top {
+        right: 15px;
+        bottom: 20px;
+        width: 43px;
+        height: 43px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .uh-footer-scroll-top,
+    .uh-footer-social a,
+    .uh-footer-links-grid a {
+        transition: none;
+    }
+}
+/* footer end */
+
+
+
+/* =========================================
+   U-TECH HYDRAULIC FEATURED PRODUCTS
+========================================= */
+
+.home-products-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--uh-bg-light, #f7f8fa);
+}
+
+/* Section Intro */
+.home-products-intro {
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--uh-text-muted, #5f6c80);
+}
+
+/* =========================================
+   SWIPER NAVIGATION
+========================================= */
+
+.home-products-prev,
+.home-products-next {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--secondary);
+    color: var(--white);
+
+    border: 1px solid var(--secondary);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-products-prev:hover,
+.home-products-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.home-products-prev i,
+.home-products-next i {
+    font-size: 15px;
+}
+
+.home-products-prev.swiper-button-disabled,
+.home-products-next.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   SWIPER SLIDER
+========================================= */
+
+.home-products-slider {
+    padding: 12px 2px 25px;
+}
+
+.home-products-slider .swiper-slide {
+    height: auto;
+}
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.home-product-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    background: var(--white);
+
+    border: 1px solid var(--uh-border-light, #e3e6ec);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.home-product-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(16, 27, 53, 0.12);
+}
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.home-product-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+
+.home-product-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.home-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.home-product-card:hover .home-product-image img {
+    transform: scale(1.08);
+}
+
+/* =========================================
+   PRODUCT CONTENT
+========================================= */
+
+.home-product-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 22px 20px 18px;
+}
+
+/* Category */
+.home-product-category {
+    display: block;
+
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+
+    margin-bottom: 10px;
+}
+
+/* Product Name */
+.home-product-name {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.home-product-name a {
+    color: var(--uh-heading, #101b35);
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.home-product-name a:hover {
+    color: var(--primary);
+}
+
+/* Product Description */
+.home-product-description {
+    color: var(--uh-text-muted, #5f6c80);
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   PRODUCT BUTTONS
+========================================= */
+
+.home-product-actions {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* Use Existing Global .main-btn */
+.home-product-actions .main-btn {
+    min-height: 46px;
+    padding: 0 18px;
+
+    font-size: 11px;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+/* =========================================
+   RESPONSIVE CSS
+========================================= */
+
+@media (max-width: 991.98px) {
+    .home-products-intro {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .home-product-content {
+        padding: 18px 15px;
+    }
+
+    .home-product-name {
+        font-size: 17px;
+    }
+
+    .home-products-prev,
+    .home-products-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .home-product-actions .main-btn {
+        font-size: 11px;
+        padding: 0 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-product-card,
+    .home-product-image img,
+    .home-products-prev,
+    .home-products-next {
+        transition: none;
+    }
+}
+
+
+/* product-sec end */
