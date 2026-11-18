@@ -85,7 +85,11 @@ export const featuredProducts = [
 const Home = () => {
     return (
         <>
+
+            {/* hero-banner start */}
+
             <section className="uh-hero">
+
                 {/* Background Video */}
                 <video
                     className="uh-hero-video"
@@ -101,80 +105,117 @@ const Home = () => {
                 <div className="uh-hero-overlay"></div>
 
                 {/* Watermark Text */}
-                <h1 className="uh-watermark">U-Tech Hydraulic</h1>
+                <h1 className="uh-watermark">
+                    U-Tech Hydraulic
+                </h1>
 
                 <div className="container">
                     <div className="uh-hero-inner">
+
                         {/* Left Content */}
                         <div className="uh-hero-left">
+
+
                             <span className="uh-top-text">
-                                U-Tech Hydraulic Engineering. Since 1988.
+                                Trusted Hydraulic Solutions Since 2014
                             </span>
 
                             <h2 className="uh-main-heading">
-                                ISO-Certified Hydraulic
+                                U-Tech Hydraulic
                                 <br />
-                                Machine Manufacturer in
+                                Manufacturer, Supplier
                                 <br />
-                                Ahmedabad
+                                & Trader of Hydraulic Machinery
                             </h2>
 
+
                             <p className="uh-description">
-                                We design and manufacture rugged hydraulic systems built for
-                                performance, precision, and long service life. With 35+ years of
-                                engineering experience and an advanced in-house workshop, we
-                                deliver trusted hydraulic solutions for industrial needs.
+                                U-Tech Hydraulic is a manufacturer, supplier
+                                and trader of industrial hydraulic machinery
+                                and components. We offer hydraulic power packs,
+                                scissor lift cylinders, hydraulic press machines
+                                and baling presses, built with quality materials
+                                to support reliable industrial performance.
                             </p>
 
+                            {/* Hero Button */}
                             <div className="uh-hero-buttons">
-                                <a href="/contact" className="main-btn">
-                                    Book Consultation
+
+                                <a href="/" className="main-btn">
+                                    <span>Explore Products</span>
+                                    <i className="fa-solid fa-arrow-right"></i>
                                 </a>
 
-                                {/* <a href="/about" className="uh-btn-arrow">
-                                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                              </a> */}
                             </div>
+
                         </div>
 
                         {/* Right Info Card */}
                         <div className="uh-hero-right">
+
                             <div className="uh-info-card">
-                                <h3>Precision Hydraulic Engineering</h3>
+
+                                <h3>
+                                    Engineered for Industrial Performance
+                                </h3>
+
                                 <div className="uh-info-line"></div>
 
                                 <p>
-                                    Choosing us means partnering with a company dedicated to
-                                    quality, precision, reliability, and long-term industrial
-                                    performance.
+                                    With a focus on quality control,
+                                    research and development, and modern
+                                    manufacturing practices, we provide
+                                    hydraulic products in different sizes,
+                                    models and specifications to meet
+                                    diverse industrial requirements.
                                 </p>
 
+                                {/* Company Highlights */}
                                 <div className="uh-stats-box">
+
                                     <div className="uh-stat-item">
-                                        <h4>35+</h4>
-                                        <p>Years of Hydraulic Expertise</p>
+
+                                        <h4>2014</h4>
+
+                                        <p>
+                                            Year of
+                                            <br />
+                                            Establishment
+                                        </p>
+
                                     </div>
 
                                     <div className="uh-stat-divider"></div>
 
                                     <div className="uh-stat-item">
-                                        <h4>50+</h4>
-                                        <p>Skilled Hydraulic Engineers</p>
+
+                                        <h4>3-in-1</h4>
+
+                                        <p>
+                                            Manufacturer,
+                                            <br />
+                                            Supplier & Trader
+                                        </p>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
                 </div>
 
-
-
             </section>
+
 
             {/* hero-banner end */}
 
 
             {/* about-sec start */}
+
             <section className="uh-about-section">
 
                 <div className="container">
@@ -188,27 +229,27 @@ const Home = () => {
                                 {/* Main Image */}
                                 <div className="uh-about-main-image">
                                     <img
-                                        src="/images/about/about-main.jpg"
+                                        src="/img/about-1.jpg"
                                         alt="U-Tech Hydraulic manufacturing facility"
                                         loading="lazy"
                                     />
                                 </div>
 
-                                {/* Experience Badge */}
+                                {/* Establishment Badge */}
                                 <div className="uh-about-experience">
-                                    <h3>25+</h3>
+                                    <h3>2014</h3>
                                     <p>
-                                        Years of Industry
-                                        <br />
-                                        Experience
+                                        Established
+                                        
+                                        Since 2014
                                     </p>
                                 </div>
 
                                 {/* Overlapping Bottom Image */}
                                 <div className="uh-about-small-image">
                                     <img
-                                        src="/images/about/about-small.jpg"
-                                        alt="Hydraulic machine manufacturing process"
+                                        src="/img/about-2.jpg"
+                                        alt="U-Tech Hydraulic machinery manufacturing process"
                                         loading="lazy"
                                     />
                                 </div>
@@ -224,42 +265,38 @@ const Home = () => {
 
                                 {/* Reusable Sub Heading */}
                                 <span className="sub-heading">
-                                    01 &nbsp; ABOUT THE WORKS
+                                    01 &nbsp; ABOUT U-TECH HYDRAULIC
                                 </span>
 
                                 {/* Reusable Heading */}
                                 <h2 className="heading">
-                                    Engineering Strength.
+                                    U-Tech Hydraulic
                                     <br />
-                                    Delivering Hydraulic
+                                    Engineering Quality,
                                     <br />
-                                    Excellence.
+                                    Delivering Reliability.
                                 </h2>
 
                                 <p className="uh-about-description">
-                                    At U-Tech Hydraulic, we focus on providing
-                                    reliable hydraulic machinery and engineering
-                                    solutions for industrial applications. Our
-                                    commitment to quality, precision, and
-                                    performance helps businesses operate
-                                    efficiently and confidently.
+                                    Established in 2014, U-Tech Hydraulic is a manufacturer,
+                                    supplier, and trader of hydraulic machinery and industrial
+                                    components. Our product range includes Industrial Hydraulic
+                                    Power Packs, Scissor Lift Cylinders, Hydraulic Power Press
+                                    Machines, Hydraulic Baling Presses, and other components.
+                                    We use high-grade raw materials and modern manufacturing
+                                    techniques to deliver reliable products in different sizes,
+                                    models, and specifications.
                                 </p>
 
                                 <p className="uh-about-description">
-                                    We understand that every industry has
-                                    different requirements. That's why we
-                                    focus on practical engineering, durable
-                                    construction, and dependable hydraulic
-                                    solutions that support smooth operations
-                                    and long-term productivity.
+                                    Our well-equipped infrastructure supports manufacturing,
+                                    quality checking, warehousing, and packaging. With a strong
+                                    focus on research and development, we continuously improve
+                                    our products and production methods. Our skilled team and
+                                    quality control practices help us provide durable and
+                                    dependable hydraulic solutions for various industries.
                                 </p>
 
-                                <p className="uh-about-description">
-                                    From manufacturing to industrial
-                                    applications, our goal is to deliver
-                                    equipment that combines strength,
-                                    efficiency, and reliable performance.
-                                </p>
 
                                 {/* Existing Global Button */}
                                 <div className="uh-about-action">
@@ -279,6 +316,7 @@ const Home = () => {
                 </div>
 
             </section>
+
             {/* about-sec end */}
 
 
@@ -286,6 +324,8 @@ const Home = () => {
             <MovingStrips />
             {/* movingStrips end */}
 
+
+            {/* ================= FEATURED PRODUCTS ================= */}
 
             {/* ================= FEATURED PRODUCTS ================= */}
             <section className="home-products-section py-5" id="product-sec">
@@ -300,21 +340,23 @@ const Home = () => {
                             <div className="section-heading mb-0">
 
                                 <span className="sub-heading">
-                                    02 &nbsp; OUR PRODUCTS
+                                    02 &nbsp; OUR PRODUCT RANGE
                                 </span>
 
                                 <h2 className="heading">
-                                    Explore Our Hydraulic
+                                    Quality Hydraulic Machinery
                                     <br />
-                                    Machinery & Equipment
+                                    by U-Tech Hydraulic
                                 </h2>
 
                             </div>
 
                             <p className="home-products-intro mt-3 mb-0">
-                                Explore our range of hydraulic machinery and industrial
-                                equipment designed for dependable performance,
-                                durable construction, and efficient operations.
+                                Explore our range of Industrial Hydraulic Power Packs,
+                                Scissor Lift Cylinders, Hydraulic Power Press Machines,
+                                Hydraulic Baling Presses, and Hydraulic Components.
+                                Available in different sizes, models, and specifications
+                                to meet diverse industrial requirements.
                             </p>
 
                         </div>
@@ -446,7 +488,7 @@ const Home = () => {
                     <div className="text-center mt-4">
 
                         <Link to="/products" className="main-btn">
-                            <span>View All Products</span>
+                            <span>Explore All Products</span>
                             <i className="fa-solid fa-arrow-right"></i>
                         </Link>
 
@@ -455,6 +497,8 @@ const Home = () => {
                 </div>
 
             </section>
+            {/* ================= PRODUCT SECTION END ================= */}
+
             {/* ================= PRODUCT SECTION END ================= */}
 
 

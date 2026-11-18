@@ -14,11 +14,11 @@ const Navbar = () => {
                             <div className="d-flex flex-wrap align-items-center">
 
                                 <a
-                                    href="tel:+919810032627"
+                                    href="tel:+919899930108"
                                     className="top-header-item"
                                 >
                                     <i className="fa-solid fa-phone"></i>
-                                    <span>Call: +91 9810032627</span>
+                                    <span>Call: +91 98999 30108</span>
                                 </a>
 
                                 <div className="top-header-item">
@@ -27,11 +27,11 @@ const Navbar = () => {
                                 </div>
 
                                 <a
-                                    href="mailto:durgaenterprises918@yahoo.com"
+                                    href="mailto:abc@gmail.com"
                                     className="top-header-item"
                                 >
                                     <i className="fa-regular fa-envelope"></i>
-                                    <span>durgaenterprises918@yahoo.com</span>
+                                    <span>abc@gmail.com</span>
                                 </a>
 
                             </div>
@@ -43,7 +43,7 @@ const Navbar = () => {
                             <div className="d-flex justify-content-end align-items-center gap-3">
 
                                 <a
-                                    href="https://www.facebook.com/durgaenterprises.fb"
+                                    href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white"
@@ -53,7 +53,7 @@ const Navbar = () => {
                                 </a>
 
                                 <a
-                                    href="https://www.instagram.com/durgaenterprises.ig/"
+                                    href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white"
@@ -79,7 +79,7 @@ const Navbar = () => {
                     <Link className="navbar-brand" to="/">
                         <img
                             src="/img/logo.png"
-                            alt="Durga Enterprises"
+                            alt="U-Tech Hydraulic"
                             className="site-logo"
                         />
                     </Link>
@@ -111,13 +111,13 @@ const Navbar = () => {
                             </li>
 
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/about">
+                                <NavLink className="nav-link" to="/">
                                     About Us
                                 </NavLink>
                             </li>
 
                             {/* Products Dropdown */}
-                            <li className="nav-item dropdown">
+                            {/* <li className="nav-item dropdown">
                                 <Link
                                     className="nav-link dropdown-toggle"
                                     to="/products"
@@ -172,37 +172,31 @@ const Navbar = () => {
                                     </li>
 
                                 </ul>
+                            </li> */}
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/">
+                                    Our Products
+                                </NavLink>
                             </li>
 
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/#indus">
+                                <NavLink className="nav-link" to="/">
                                     Industries
                                 </NavLink>
                             </li>
 
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/contact">
+                                <NavLink className="nav-link" to="/">
                                     Contact Us
                                 </NavLink>
                             </li>
 
-                            {/* Search Icon */}
-                            <li className="nav-item">
-                                <button
-                                    type="button"
-                                    className="nav-link border-0 bg-transparent"
-                                    aria-label="Search products"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#productSearchModal"
-                                >
-                                    <i className="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </li>
+                           
 
                             {/* Global Button */}
                             <li className="nav-item ms-lg-2 mt-3 mt-lg-0">
                                 <a 
-                                    href="tel:+919810032627"
+                                    href="tel:+919899930108"
                                     className="main-btn"
                                 >
                                     <i className="fa-solid fa-phone fa-beat pe-4"></i>
@@ -216,51 +210,6 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Product Search Modal */}
-            <div
-                className="modal fade"
-                id="productSearchModal"
-                tabIndex="-1"
-                aria-labelledby="productSearchTitle"
-                aria-hidden="true"
-            >
-                <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content">
-
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="productSearchTitle">
-                                Search Products
-                            </h5>
-
-                            <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            ></button>
-                        </div>
-
-                        <form action="/products" method="get">
-                            <div className="modal-body">
-                                <input
-                                    type="search"
-                                    name="q"
-                                    className="form-control"
-                                    placeholder="Search welding or safety products..."
-                                    required
-                                />
-                            </div>
-
-                            <div className="modal-footer">
-                                <button type="submit" className=" btn-theme">
-                                    Search
-                                </button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
 
         </header>
     );

@@ -2,21 +2,21 @@
 import React from "react";
 
 const navyItems = [
-    "PRECISION",
-    "TRADITION",
-    "HYDRAULIC ENGINEERING",
-    "QUALITY",
-    "INNOVATION",
     "U-TECH HYDRAULIC",
+    "HYDRAULIC POWER PACKS",
+    "SCISSOR LIFT CYLINDERS",
+    "HYDRAULIC COMPONENTS",
+    "HYDRAULIC POWER PRESSES",
+    "HYDRAULIC BALING PRESSES",
 ];
 
 const redItems = [
-    "HEAT TREATMENT",
-    "MACHINING",
-    "FABRICATION",
-    "HYDRAULIC MACHINES",
+    "HYDRAULIC MACHINERY",
     "INDUSTRIAL SOLUTIONS",
+    "QUALITY CONTROL",
+    "RESEARCH & DEVELOPMENT",
     "MANUFACTURING",
+    "RELIABLE PERFORMANCE",
 ];
 
 const StripContent = ({ items }) => (
@@ -30,7 +30,10 @@ const StripContent = ({ items }) => (
                     {item}
                 </span>
 
-                <span className="uh-strip-star" aria-hidden="true">
+                <span
+                    className="uh-strip-star"
+                    aria-hidden="true"
+                >
                     ✦
                 </span>
             </React.Fragment>
@@ -42,7 +45,7 @@ const MovingStrips = () => {
     return (
         <section
             className="uh-moving-strips"
-            aria-label="U-Tech Hydraulic capabilities"
+            aria-label="U-Tech Hydraulic products and capabilities"
         >
             {/* Navy Strip - Left to Right */}
             <div className="uh-strip uh-strip-navy">

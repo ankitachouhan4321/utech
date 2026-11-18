@@ -21,6 +21,7 @@ const Footer = () => {
   };
 
   return (
+
     <footer className="uh-footer">
 
       {/* NEWSLETTER SECTION */}
@@ -30,18 +31,20 @@ const Footer = () => {
           <div className="uh-footer-newsletter">
 
             <div className="uh-newsletter-content">
+
               <span className="uh-newsletter-label">
                 <i className="fa-solid fa-square"></i>
-                INDUSTRIAL UPDATES
+                STAY CONNECTED WITH U-TECH
               </span>
 
               <h2>
-                Engineering insights,
+                Discover Hydraulic
                 <br />
-                company news and
+                Products, Industry News
                 <br />
-                new innovations.
+                & Company Updates.
               </h2>
+
             </div>
 
             <form
@@ -50,8 +53,8 @@ const Footer = () => {
             >
               <input
                 type="email"
-                placeholder="Your work email"
-                aria-label="Your work email"
+                placeholder="Enter your email address"
+                aria-label="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -64,6 +67,7 @@ const Footer = () => {
             </form>
 
           </div>
+
         </div>
       </div>
 
@@ -77,6 +81,7 @@ const Footer = () => {
             <div className="uh-footer-about">
 
               <Link to="/" className="uh-footer-logo">
+
                 <img
                   src="/images/logo.png"
                   alt="U-Tech Hydraulic Logo"
@@ -87,13 +92,16 @@ const Footer = () => {
                   <strong> Hydraulic</strong>
                   <b>.</b>
                 </span>
+
               </Link>
 
               <p>
-                U-Tech Hydraulic provides hydraulic machinery
-                and engineering solutions designed for
-                industrial strength, reliable performance,
-                and long-term productivity.
+                Established in 2014, U-Tech Hydraulic is a
+                manufacturer, supplier, and trader of
+                hydraulic machinery and industrial components.
+                We offer quality hydraulic products in
+                different sizes and specifications to
+                meet diverse industrial requirements.
               </p>
 
               <div className="uh-footer-watermark">
@@ -112,13 +120,37 @@ const Footer = () => {
 
               <div className="uh-footer-links-grid">
 
-                <Link to="/about">About Us</Link>
-                <Link to="/products">Our Products</Link>
+                <Link to="/">
+                  Home
+                </Link>
 
-                <Link to="/contact">Contact Us</Link>
-                <Link to="/gallery">Gallery</Link>
+                <Link to="/about">
+                  About Us
+                </Link>
 
-                <Link to="/contact">Request a Quote</Link>
+                <Link to="/products">
+                  Our Products
+                </Link>
+
+                <Link to="/contact">
+                  Contact Us
+                </Link>
+
+                <Link to="/products/industrial-hydraulic-power-pack">
+                  Hydraulic Power Packs
+                </Link>
+
+                <Link to="/products/scissor-lift-cylinder">
+                  Scissor Lift Cylinders
+                </Link>
+
+                <Link to="/products/hydraulic-power-press-machine">
+                  Hydraulic Press Machines
+                </Link>
+
+                <Link to="/products/hydraulic-baling-press">
+                  Hydraulic Baling Presses
+                </Link>
 
               </div>
 
@@ -134,11 +166,11 @@ const Footer = () => {
                 </h3>
 
                 <p>
-                  Your Office Address
+                  U-Tech Hydraulic
                   <br />
-                  City, State, PIN Code
+                  Add Your Complete Office Address
                   <br />
-                  India
+                  City, State, PIN Code, India
                 </p>
 
               </div>
@@ -146,12 +178,13 @@ const Footer = () => {
               <div className="uh-footer-contact-group">
 
                 <h3 className="uh-footer-title">
-                  Email
+                  Email Us
                 </h3>
 
                 <p>
-                  Have a project in mind?
+                  For product enquiries and quotations:
                   <br />
+
                   <a href="mailto:your-email@example.com">
                     your-email@example.com
                   </a>
@@ -167,14 +200,10 @@ const Footer = () => {
               <div className="uh-footer-phone">
 
                 <h3 className="uh-footer-title">
-                  Phone
+                  Call Us
                 </h3>
 
                 <a href="tel:+910000000000">
-                  +91 XXXXX XXXXX
-                </a>
-
-                <a href="tel:+910000000001">
                   +91 XXXXX XXXXX
                 </a>
 
@@ -183,24 +212,36 @@ const Footer = () => {
               <div className="uh-footer-social-wrap">
 
                 <h3 className="uh-footer-title">
-                  Follow Us
+                  Follow U-Tech Hydraulic
                 </h3>
 
                 <div className="uh-footer-social">
 
-                  <a href="#" aria-label="LinkedIn">
+                  <a
+                    href="#"
+                    aria-label="LinkedIn"
+                  >
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
 
-                  <a href="#" aria-label="X">
-                    <i className="fa-brands fa-x-twitter"></i>
+                  <a
+                    href="#"
+                    aria-label="Instagram"
+                  >
+                    <i className="fa-brands fa-instagram"></i>
                   </a>
 
-                  <a href="#" aria-label="YouTube">
+                  <a
+                    href="#"
+                    aria-label="YouTube"
+                  >
                     <i className="fa-brands fa-youtube"></i>
                   </a>
 
-                  <a href="#" aria-label="Facebook">
+                  <a
+                    href="#"
+                    aria-label="Facebook"
+                  >
                     <i className="fa-brands fa-facebook-f"></i>
                   </a>
 
@@ -219,6 +260,7 @@ const Footer = () => {
       <div className="uh-footer-bottom">
 
         <div className="container">
+
           <div className="uh-footer-bottom-inner">
 
             <p>
@@ -228,7 +270,7 @@ const Footer = () => {
             </p>
 
             <p className="uh-footer-credit">
-              Designed by
+              Designed by{" "}
               <a
                 href="https://viraladsmedia.com/"
                 target="_blank"
@@ -239,6 +281,7 @@ const Footer = () => {
             </p>
 
           </div>
+
         </div>
 
       </div>
@@ -254,6 +297,7 @@ const Footer = () => {
       </button>
 
     </footer>
+
   );
 };
 
