@@ -437,11 +437,7 @@ const Home = () => {
 
                                 {/* Reusable Heading */}
                                 <h2 className="heading">
-                                    U-Tech Hydraulic
-                                    <br />
-                                    Engineering Quality,
-                                    <br />
-                                    Delivering Reliability.
+                                    U-Tech Hydraulic <br /> Engineering Quality, <br />Delivering Reliability.
                                 </h2>
 
                                 <p className="uh-about-description">
