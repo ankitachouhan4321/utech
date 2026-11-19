@@ -80,6 +80,7 @@
   margin: 0 0 28px;
 }
 
+
 /* Button Wrapper start*/
 .uh-buttons {
   display: flex;
@@ -269,43 +270,40 @@
   background:
     linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.58) 38%,
-      rgba(0, 0, 0, 0.76) 100%
+      rgba(0, 0, 0, 0.541) 0%,
+      rgba(0, 0, 0, 0.37) 38%,
+      rgba(0, 0, 0, 0.603) 100%
     ),
     linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.35) 100%);
   z-index: 1;
 }
 
-
 .uh-watermark {
-    position: absolute;
-    top: 55px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    font-size: clamp(60px, 11vw, 150px);
-    font-weight: 800;
-    line-height: 1;
-    margin: 0;
-    z-index: 2;
-    pointer-events: none;
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: clamp(60px, 11vw, 150px);
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  z-index: 2;
+  pointer-events: none;
 
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.486) 0%,
-        rgba(180, 195, 220, 0.151) 50%,
-        rgba(255, 28, 28, 0.322) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.486) 0%,
+    rgba(180, 195, 220, 0.151) 50%,
+    rgba(255, 28, 28, 0.322) 100%
+  );
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -3px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -3px;
 }
-
-
 
 .uh-hero .container {
   position: relative;
@@ -1018,10 +1016,13 @@ a.top-header-item:hover {
   }
 
   .heading {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
     letter-spacing: -0.8px;
     margin-bottom: 20px;
+  }
+  .heading br {
+    display: none;
   }
 
   .uh-about-description {
@@ -2268,11 +2269,6 @@ a.top-header-item:hover {
 
 .uh-why-choose-left h2 {
   color: #ffffff;
-  font-size: 68px;
-  line-height: 1.05;
-  font-weight: 700;
-  letter-spacing: -2px;
-  margin: 0 0 28px;
 }
 
 .uh-why-choose-left p {
@@ -2328,10 +2324,6 @@ a.top-header-item:hover {
 }
 
 @media (max-width: 1199px) {
-  .uh-why-choose-left h2 {
-    font-size: 56px;
-  }
-
   .uh-why-choose-left p {
     font-size: 20px;
   }
@@ -2347,10 +2339,6 @@ a.top-header-item:hover {
     gap: 45px;
   }
 
-  .uh-why-choose-left h2 {
-    font-size: 48px;
-  }
-
   .uh-why-choose-left p {
     font-size: 18px;
   }
@@ -2363,12 +2351,6 @@ a.top-header-item:hover {
 @media (max-width: 767px) {
   .uh-why-choose-section::before {
     background-size: 50px 50px;
-  }
-
-  .uh-why-choose-left h2 {
-    font-size: 38px;
-    line-height: 1.1;
-    letter-spacing: -1px;
   }
 
   .uh-why-choose-left p {
@@ -2495,6 +2477,24 @@ a.top-header-item:hover {
   padding: 100px 0;
 }
 
+.uh-faq-section {
+  position: relative;
+  background: #06153d;
+  overflow: hidden;
+  padding: 110px 0;
+}
+
+.uh-faq-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
 .uh-faq-wrap {
   max-width: 950px;
   margin: 0 auto;
@@ -2518,7 +2518,7 @@ a.top-header-item:hover {
 }
 
 .uh-faq-section .uh-section-number {
-  color: #8a94a8;
+  color: #eeeeee;
   font-size: 12px;
   letter-spacing: 2px;
 }
@@ -2533,7 +2533,7 @@ a.top-header-item:hover {
 /* Main Heading */
 
 .uh-faq-wrap h2 {
-  color: #101b36;
+  color: white;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -2565,7 +2565,7 @@ a.top-header-item:hover {
   cursor: pointer;
   text-align: left;
   font-family: inherit;
-  color: #101b36;
+  color: white;
   font-size: 19px;
   font-weight: 600;
   line-height: 1.4;
@@ -2587,7 +2587,7 @@ a.top-header-item:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #101b36;
+  color: white;
   font-size: 26px;
   font-weight: 400;
   line-height: 1;
@@ -2607,7 +2607,7 @@ a.top-header-item:hover {
 }
 
 .uh-faq-answer p {
-  color: #65758c;
+  color: #e7e7e7;
   font-size: 16px;
   line-height: 1.8;
   margin: 0;
@@ -2926,7 +2926,7 @@ a.top-header-item:hover {
 .home-testimonial-section {
   position: relative;
   width: 100%;
-  background: #f8f8f8;
+  /* background: #f8f8f8; */
 }
 
 /* Heading Description */
@@ -3067,7 +3067,12 @@ a.top-header-item:hover {
     flex-basis: 42px;
     font-size: 18px;
   }
-} 
+}
 /* testimonial end */
 
-
+@media (max-width:575px) {
+    .heading br {
+  display: none !important;
+}
+    
+}

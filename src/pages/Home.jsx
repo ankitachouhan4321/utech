@@ -407,7 +407,7 @@ const Home = () => {
                                     <h3>2014</h3>
                                     <p>
                                         Established
-                                        
+
                                         Since 2014
                                     </p>
                                 </div>
@@ -485,7 +485,7 @@ const Home = () => {
             </section>
 
             {/* about-sec end */}
-            
+
 
             {/* movingStrips start */}
             <MovingStrips />
@@ -505,12 +505,8 @@ const Home = () => {
                                 <span className="uh-section-text">WHY CHOOSE US</span>
                             </div>
 
-                            <h2>
-                                Why Industries
-                                
-                                Choose U-Tech
-                               
-                                Hydraulic?
+                            <h2 className='heading'>
+                                Why Industries Choose U-Tech Hydraulic?
                             </h2>
 
                             <p>
@@ -889,7 +885,7 @@ const Home = () => {
 
 
             {/* faq start */}
-            <UTechFAQ/>
+            <UTechFAQ />
             {/* faq end */}
 
             {/* ================= TESTIMONIAL SECTION ================= */}
