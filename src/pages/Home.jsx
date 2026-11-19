@@ -180,11 +180,7 @@ const Home = () => {
                             </span>
 
                             <h2 className="uh-main-heading">
-                                U-Tech Hydraulic
-                                <br />
-                                Manufacturer, Supplier
-                                <br />
-                                & Trader of Hydraulic Machinery
+                                U-Tech Hydraulic <br /> Manufacturer, Supplier <br /> & Trader of Hydraulic Machinery
                             </h2>
 
 
