@@ -4,82 +4,141 @@ import { Link } from "react-router-dom";
 import MovingStrips from '../components/MovingStrips'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import UTechFAQ from '../components/UTechFAQ'
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
+
+
+const testimonials = [
+    {
+        id: 1,
+        name: "Customer Name",
+        designation: "Industrial Equipment Buyer",
+        rating: 5,
+        review:
+            "The hydraulic power pack met our machinery requirements and provided dependable performance. We appreciated the clear communication and support throughout the purchasing process."
+    },
+    {
+        id: 2,
+        name: "Customer Name",
+        designation: "Manufacturing Industry",
+        rating: 5,
+        review:
+            "We were looking for a reliable hydraulic solution for our production operations. The team helped us understand the product specifications and select suitable equipment."
+    },
+    {
+        id: 3,
+        name: "Customer Name",
+        designation: "Engineering Company",
+        rating: 5,
+        review:
+            "Our experience with U-Tech Hydraulic was positive. The team understood our technical requirements and guided us in choosing the right hydraulic equipment for our application."
+    },
+    {
+        id: 4,
+        name: "Customer Name",
+        designation: "Material Handling Industry",
+        rating: 5,
+        review:
+            "We needed hydraulic equipment suitable for our material handling operations. The product quality and the team's attention to our requirements made the overall experience satisfactory."
+    },
+    {
+        id: 5,
+        name: "Customer Name",
+        designation: "Recycling Industry",
+        rating: 5,
+        review:
+            "The hydraulic baling equipment suited our material compression needs. We appreciated the practical guidance and product information provided during the selection process."
+    },
+    {
+        id: 6,
+        name: "Customer Name",
+        designation: "Industrial Machinery Supplier",
+        rating: 5,
+        review:
+            "U-Tech Hydraulic provided helpful technical information and maintained clear communication about our equipment requirements. We appreciated their professional approach."
+    }
+];
 
 
 export const featuredProducts = [
     {
         id: 1,
-        name: "Hydraulic Power Pack",
-        slug: "hydraulic-power-pack",
-        category: "Hydraulic Equipment",
+        name: "Mini Hydraulic Power Pack",
+        slug: "mini-hydraulic-power-pack",
+        category: "Hydraulic Power Packs",
         image: "/img/prod-1.png",
         description:
-            "Hydraulic power pack designed to provide reliable power and smooth operation for various industrial hydraulic systems.",
+            "Compact mini hydraulic power pack designed to deliver reliable hydraulic power, smooth operation, and efficient performance for industrial machinery and equipment.",
     },
     {
         id: 2,
-        name: "Hydraulic Cylinder",
-        slug: "hydraulic-cylinder",
-        category: "Hydraulic Components",
-        image: "/img/prod-1.png",
+        name: "Electrical Mini Hydraulic Power Pack",
+        slug: "electrical-mini-hydraulic-power-pack",
+        category: "Hydraulic Power Packs",
+        image: "/img/prod-2.png",
         description:
-            "Durable hydraulic cylinders designed for controlled movement, lifting, pressing and industrial machinery applications.",
+            "Electric motor-driven mini hydraulic power pack designed to provide controlled hydraulic pressure and dependable operation for various industrial applications.",
     },
     {
         id: 3,
-        name: "Hydraulic Press Machine",
-        slug: "hydraulic-press-machine",
-        category: "Industrial Machinery",
-        image: "/img/prod-1.png",
+        name: "Scissor Lift Cylinder",
+        slug: "scissor-lift-cylinder",
+        category: "Hydraulic Cylinders",
+        image: "/img/prod-3.png",
         description:
-            "Heavy-duty hydraulic press machine suitable for pressing, forming, bending and other industrial manufacturing operations.",
+            "Durable scissor lift hydraulic cylinder designed for controlled lifting, stable movement, and reliable performance in hydraulic scissor lift systems.",
     },
     {
         id: 4,
-        name: "Hydraulic Jack",
-        slug: "hydraulic-jack",
-        category: "Hydraulic Lifting Equipment",
-        image: "/img/prod-1.png",
+        name: "Industrial Hydraulic Cylinder",
+        slug: "industrial-hydraulic-cylinder",
+        category: "Hydraulic Cylinders",
+        image: "/img/prod-4.png",
         description:
-            "Hydraulic jack designed for controlled lifting and supporting heavy loads in industrial maintenance applications.",
+            "Heavy-duty industrial hydraulic cylinder designed to provide controlled linear movement, reliable force, and efficient operation in industrial machinery.",
     },
     {
         id: 5,
-        name: "Hydraulic Hose Assembly",
-        slug: "hydraulic-hose-assembly",
-        category: "Hydraulic Accessories",
-        image: "/img/prod-1.png",
+        name: "Hand Operated Hydraulic Press Machine",
+        slug: "hand-operated-hydraulic-press-machine",
+        category: "Hydraulic Press Machines",
+        image: "/img/prod-5.png",
         description:
-            "Flexible hydraulic hose assemblies designed for fluid transfer in hydraulic machinery and industrial equipment.",
+            "Hand operated hydraulic press machine designed for controlled pressing, straightening, and assembly operations in workshops and industrial applications.",
     },
     {
         id: 6,
-        name: "Hydraulic Control Valve",
-        slug: "hydraulic-control-valve",
-        category: "Hydraulic Components",
-        image: "/img/prod-1.png",
+        name: "VERTICAL INJECTION MOULDING",
+        slug: "vertical-injection-moulding",
+        category: "Injection Moulding Machines",
+        image: "/img/prod-6.png",
         description:
-            "Hydraulic control valves designed to regulate fluid flow, pressure and direction in industrial hydraulic systems.",
+            "Vertical injection moulding machine designed for precision moulding, controlled material injection, and efficient production of plastic components.",
     },
     {
         id: 7,
-        name: "Hydraulic Scissor Lift",
-        slug: "hydraulic-scissor-lift",
-        category: "Lifting Equipment",
-        image: "/img/prod-1.png",
+        name: "Industrial Hydraulic Deep Drawing Machine",
+        slug: "industrial-hydraulic-deep-drawing-machine",
+        category: "Hydraulic Press Machines",
+        image: "/img/prod-7.png",
         description:
-            "Hydraulic scissor lift designed for stable vertical lifting and efficient material handling in industrial facilities.",
+            "Industrial hydraulic deep drawing machine designed for sheet metal forming, deep drawing operations, and accurate shaping of metal components.",
     },
     {
         id: 8,
-        name: "Hydraulic Pump",
-        slug: "hydraulic-pump",
-        category: "Hydraulic Equipment",
-        image: "/img/prod-1.png",
+        name: "Hydraulic Paper Bailing Press",
+        slug: "hydraulic-paper-bailing-press",
+        category: "Hydraulic Baling Press Machines",
+        image: "/img/prod-8.png",
         description:
-            "Hydraulic pump designed to supply pressurized fluid for smooth and efficient operation of hydraulic machinery.",
+            "Hydraulic paper baling press designed to compress waste paper, cardboard, and recyclable materials into compact bales for easier storage and handling.",
     },
 ];
+
 
 
 const Home = () => {
@@ -213,6 +272,114 @@ const Home = () => {
 
             {/* hero-banner end */}
 
+            {/* industries start */}
+            <section className="uh-industries-section">
+                <div className="container">
+
+                    <div className="uh-industries-heading">
+                        <h2 className='heading'>Industries We Serve</h2>
+                        <p>
+                            Reliable hydraulic solutions designed for different
+                            industrial applications and operational needs.
+                        </p>
+                    </div>
+
+                    <div className="uh-industries-grid">
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-industry"></i>
+                            </div>
+                            <h3>Manufacturing</h3>
+                            <p>
+                                Hydraulic power packs and presses for efficient
+                                production and industrial machinery operations.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-car"></i>
+                            </div>
+                            <h3>Automotive</h3>
+                            <p>
+                                Hydraulic solutions for component pressing,
+                                assembly processes, and automotive production.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-helmet-safety"></i>
+                            </div>
+                            <h3>Construction</h3>
+                            <p>
+                                Durable hydraulic cylinders for lifting,
+                                movement, and heavy-duty equipment applications.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-dolly"></i>
+                            </div>
+                            <h3>Material Handling</h3>
+                            <p>
+                                Hydraulic cylinders and power units for smooth
+                                lifting, positioning, and load-handling operations.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-gears"></i>
+                            </div>
+                            <h3>Steel & Metal</h3>
+                            <p>
+                                Hydraulic presses and cylinders for metal
+                                forming, pressing, and fabrication applications.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-recycle"></i>
+                            </div>
+                            <h3>Recycling & Scrap</h3>
+                            <p>
+                                Hydraulic baling equipment for compressing
+                                recyclable materials and managing industrial waste.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-box-open"></i>
+                            </div>
+                            <h3>Paper & Packaging</h3>
+                            <p>
+                                Hydraulic paper baling presses for compacting
+                                paper waste and improving material storage.
+                            </p>
+                        </div>
+
+                        <div className="uh-industry-item">
+                            <div className="uh-industry-icon">
+                                <i className="fa-solid fa-bottle-water"></i>
+                            </div>
+                            <h3>Plastic & PET</h3>
+                            <p>
+                                Hydraulic baling machines for compressing PET
+                                bottles and plastic recyclable materials.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            {/* industries end */}
 
             {/* about-sec start */}
 
@@ -248,7 +415,7 @@ const Home = () => {
                                 {/* Overlapping Bottom Image */}
                                 <div className="uh-about-small-image">
                                     <img
-                                        src="/img/about-2.jpg"
+                                        src="/img/about-2.png"
                                         alt="U-Tech Hydraulic machinery manufacturing process"
                                         loading="lazy"
                                     />
@@ -318,11 +485,112 @@ const Home = () => {
             </section>
 
             {/* about-sec end */}
-
+            
 
             {/* movingStrips start */}
             <MovingStrips />
             {/* movingStrips end */}
+
+
+            {/* why-choose start */}
+
+            <section className="uh-why-choose-section">
+                <div className="container">
+                    <div className="uh-why-choose-wrap">
+
+                        <div className="uh-why-choose-left">
+                            <div className="uh-section-tag">
+                                <span className="uh-dot"></span>
+                                <span className="uh-section-number">03</span>
+                                <span className="uh-section-text">WHY CHOOSE US</span>
+                            </div>
+
+                            <h2>
+                                Why Industries
+                                
+                                Choose U-Tech
+                               
+                                Hydraulic?
+                            </h2>
+
+                            <p>
+                                U-Tech Hydraulic provides reliable hydraulic equipment
+                                and practical solutions for a wide range of industrial
+                                applications. We focus on precision manufacturing,
+                                consistent quality, and customer satisfaction to help
+                                businesses achieve efficient and dependable operations.
+                            </p>
+                        </div>
+
+                        <div className="uh-why-choose-right">
+
+                            <div className="uh-why-card">
+                                <span>01</span>
+                                <p>
+                                    <strong>In-House Manufacturing</strong>
+                                    We manufacture hydraulic machinery with careful
+                                    attention to precision, material quality, and
+                                    finishing for dependable industrial performance.
+                                </p>
+                            </div>
+
+                            <div className="uh-why-card">
+                                <span>02</span>
+                                <p>
+                                    <strong>Custom Hydraulic Solutions: </strong>
+                                    We provide hydraulic equipment and solutions suited
+                                    to different machine specifications, industrial
+                                    applications, and operational requirements.
+                                </p>
+                            </div>
+
+                            <div className="uh-why-card">
+                                <span>03</span>
+                                <p>
+                                    <strong>Quality-Focused Production: </strong>
+                                    Our manufacturing process focuses on product
+                                    quality, structural strength, and reliable
+                                    performance for industrial applications.
+                                </p>
+                            </div>
+
+                            <div className="uh-why-card">
+                                <span>04</span>
+                                <p>
+                                    <strong>Technical Knowledge & Experience: </strong>
+                                    Our team understands hydraulic systems and industrial
+                                    machinery requirements, helping customers select
+                                    suitable equipment for their operations.
+                                </p>
+                            </div>
+
+                            <div className="uh-why-card">
+                                <span>05</span>
+                                <p>
+                                    <strong>Efficient Order Management: </strong>
+                                    We focus on organized production planning, clear
+                                    communication, and efficient order processing
+                                    to support customers' project schedules.
+                                </p>
+                            </div>
+
+                            <div className="uh-why-card">
+                                <span>06</span>
+                                <p>
+                                    <strong>Customer-Focused Support: </strong>
+                                    We build lasting business relationships through
+                                    responsive communication, product guidance,
+                                    and dependable customer assistance.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            {/* why-choose end */}
 
 
             {/* ================= FEATURED PRODUCTS ================= */}
@@ -487,7 +755,7 @@ const Home = () => {
                     {/* View All Products */}
                     <div className="text-center mt-4">
 
-                        <Link to="/products" className="main-btn">
+                        <Link to="/" className="main-btn">
                             <span>Explore All Products</span>
                             <i className="fa-solid fa-arrow-right"></i>
                         </Link>
@@ -497,12 +765,240 @@ const Home = () => {
                 </div>
 
             </section>
-            {/* ================= PRODUCT SECTION END ================= */}
 
-            {/* ================= PRODUCT SECTION END ================= */}
+            {/* product-sec end */}
+
+
+            <section className="uh-manufacturing-section">
+                <div className="container">
+
+                    {/* SECTION HEADER */}
+                    <div className="uh-manufacturing-header">
+
+                        <div className="uh-section-tag">
+                            <span className="uh-dot"></span>
+                            <span className="uh-section-number">04</span>
+                            <span className="uh-section-text">
+                                MANUFACTURING
+                            </span>
+                        </div>
+
+                        <h2>
+                            Advanced Manufacturing for Reliable
+                            Hydraulic Solutions
+                        </h2>
+
+                    </div>
+
+                    {/* MANUFACTURING CONTENT */}
+                    <div className="uh-manufacturing-content">
+
+                        {/* LEFT CONTENT */}
+                        <div className="uh-manufacturing-left">
+                            <p>
+                                At U-Tech Hydraulic, we have a dedicated
+                                manufacturing setup for a wide range of
+                                hydraulic equipment, including hydraulic
+                                power packs, cylinders, presses, and baling
+                                machines. Our facility is equipped with
+                                modern machinery and a skilled team that
+                                follows a systematic production process—from
+                                design and fabrication to testing and final
+                                assembly. We use quality materials and strict
+                                process control to ensure durable, efficient,
+                                and reliable hydraulic solutions for different
+                                industrial applications.
+                            </p>
+                        </div>
+
+                        {/* RIGHT FEATURES */}
+                        <div className="uh-manufacturing-features">
+
+                            <div className="uh-manufacturing-feature">
+                                <div className="uh-feature-heading">
+                                    <i className="fa-solid fa-gear"></i>
+                                    <h3>Modern Infrastructure</h3>
+                                </div>
+                                <p>
+                                    Well-equipped facility for precision
+                                    and efficient production.
+                                </p>
+                            </div>
+
+                            <div className="uh-manufacturing-feature">
+                                <div className="uh-feature-heading">
+                                    <i className="fa-solid fa-layer-group"></i>
+                                    <h3>Quality Materials</h3>
+                                </div>
+                                <p>
+                                    High-grade materials selected for
+                                    durable and dependable performance.
+                                </p>
+                            </div>
+
+                            <div className="uh-manufacturing-feature">
+                                <div className="uh-feature-heading">
+                                    <i className="fa-solid fa-users"></i>
+                                    <h3>Skilled Team</h3>
+                                </div>
+                                <p>
+                                    Experienced professionals with
+                                    practical hydraulic knowledge.
+                                </p>
+                            </div>
+
+                            <div className="uh-manufacturing-feature">
+                                <div className="uh-feature-heading">
+                                    <i className="fa-solid fa-shield-halved"></i>
+                                    <h3>Process Control</h3>
+                                </div>
+                                <p>
+                                    Systematic checks throughout production
+                                    to maintain consistent quality.
+                                </p>
+                            </div>
+
+                            <div className="uh-manufacturing-feature">
+                                <div className="uh-feature-heading">
+                                    <i className="fa-solid fa-screwdriver-wrench"></i>
+                                    <h3>Testing & Inspection</h3>
+                                </div>
+                                <p>
+                                    Careful inspection of equipment
+                                    for performance and reliability.
+                                </p>
+                            </div>
+
+                            <div className="uh-manufacturing-feature">
+                                <div className="uh-feature-heading">
+                                    <i className="fa-solid fa-cube"></i>
+                                    <h3>Ready for Industrial Use</h3>
+                                </div>
+                                <p>
+                                    Hydraulic equipment built for
+                                    demanding industrial applications.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+            {/* faq start */}
+            <UTechFAQ/>
+            {/* faq end */}
+
+            {/* ================= TESTIMONIAL SECTION ================= */}
+            <section className="home-testimonial-section py-lg-5 py-4">
+                <div className="container py-lg-4">
+
+                    {/* Global Heading */}
+                    <div className="text-center mb-5">
+                        <span className="sub-heading">
+                            Customer Feedback
+                        </span>
+
+                        <h2 className="heading">
+                            What Our Customers Say
+                        </h2>
+
+                        <p className="home-testimonial-intro mx-auto mt-3 mb-0">
+                            We value the trust of our customers and focus on
+                            understanding their welding and industrial
+                            safety product requirements.
+                        </p>
+                    </div>
+
+                    {/* Testimonial Swiper */}
+                    <Swiper
+                        modules={[Pagination, Autoplay]}
+                        slidesPerView={1}
+                        spaceBetween={24}
+                        speed={700}
+                        grabCursor={true}
+                        autoplay={{
+                            delay: 4500,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                        }}
+                        pagination={{
+                            clickable: true,
+                            el: ".home-testimonial-pagination",
+                        }}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1200: {
+                                slidesPerView: 3,
+                                spaceBetween: 24,
+                            },
+                        }}
+                        className="home-testimonial-slider"
+                    >
+
+                        {testimonials.map((item) => (
+                            <SwiperSlide key={item.id}>
+
+                                <div className="home-testimonial-card h-100">
+
+                                    {/* Rating */}
+                                    <div className="home-testimonial-rating mb-3">
+                                        {Array.from({ length: item.rating }).map((_, index) => (
+                                            <i
+                                                key={index}
+                                                className="fa-solid fa-star"
+                                            ></i>
+                                        ))}
+                                    </div>
+
+                                    {/* Review */}
+                                    <p className="home-testimonial-review">
+                                        "{item.review}"
+                                    </p>
+
+                                    {/* Customer Information */}
+                                    <div className="home-testimonial-user d-flex align-items-center gap-3 mt-auto">
+
+                                        <div className="home-testimonial-avatar">
+                                            <i className="fa-regular fa-user"></i>
+                                        </div>
+
+                                        <div>
+                                            <h5 className="mb-1">
+                                                {item.name}
+                                            </h5>
+
+                                            <span>
+                                                {item.designation}
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </SwiperSlide>
+                        ))}
+
+                    </Swiper>
+
+                    {/* Pagination */}
+                    <div className="home-testimonial-pagination"></div>
+
+                </div>
+            </section>
+            {/* ================= TESTIMONIAL SECTION END ================= */}
+
 
 
         </>
+
     )
 }
 

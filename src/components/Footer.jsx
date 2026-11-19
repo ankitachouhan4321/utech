@@ -83,7 +83,7 @@ const Footer = () => {
               <Link to="/" className="uh-footer-logo">
 
                 <img
-                  src="/images/logo.png"
+                  src="/img/logo.png"
                   alt="U-Tech Hydraulic Logo"
                 />
 
@@ -124,31 +124,31 @@ const Footer = () => {
                   Home
                 </Link>
 
-                <Link to="/about">
+                <Link to="/">
                   About Us
                 </Link>
 
-                <Link to="/products">
+                <Link to="/">
                   Our Products
                 </Link>
 
-                <Link to="/contact">
+                <Link to="/">
                   Contact Us
                 </Link>
 
-                <Link to="/products/industrial-hydraulic-power-pack">
+                <Link to="/">
                   Hydraulic Power Packs
                 </Link>
 
-                <Link to="/products/scissor-lift-cylinder">
+                <Link to="/">
                   Scissor Lift Cylinders
                 </Link>
 
-                <Link to="/products/hydraulic-power-press-machine">
+                <Link to="/">
                   Hydraulic Press Machines
                 </Link>
 
-                <Link to="/products/hydraulic-baling-press">
+                <Link to="/">
                   Hydraulic Baling Presses
                 </Link>
 
@@ -166,11 +166,8 @@ const Footer = () => {
                 </h3>
 
                 <p>
-                  U-Tech Hydraulic
-                  <br />
-                  Add Your Complete Office Address
-                  <br />
-                  City, State, PIN Code, India
+                  Khasra No. 83/16, Plot No. 31, Gali No. 1, Firni Road Industrial Area, Mundka, New Delhi - 110041, India
+
                 </p>
 
               </div>
@@ -185,8 +182,8 @@ const Footer = () => {
                   For product enquiries and quotations:
                   <br />
 
-                  <a href="mailto:your-email@example.com">
-                    your-email@example.com
+                  <a href="mailto:abc@example.com">
+                    abc@example.com
                   </a>
                 </p>
 
@@ -203,8 +200,8 @@ const Footer = () => {
                   Call Us
                 </h3>
 
-                <a href="tel:+910000000000">
-                  +91 XXXXX XXXXX
+                <a href="tel:+919899930108">
+                  +91 98999 30108
                 </a>
 
               </div>
