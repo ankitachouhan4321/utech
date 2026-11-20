@@ -47,19 +47,20 @@ const UTechFAQ = () => {
                 <div className="uh-faq-wrap">
 
                     <div className="uh-section-tag">
-                        <span className="uh-dot"></span>
-                        <span className="uh-section-number">05</span>
-                        <span className="uh-section-text">FAQs</span>
+                     
+                        <span className="sub-heading"> FAQs</span>
                     </div>
 
-                    <h2>
+                    <h2 className="heading heading-dark">
                         Frequently Asked Questions
                     </h2>
 
+                   
+                   
                     <div className="uh-faq-list">
 
                         {faqData.map((faq, index) => (
-                            <div
+                            <div data-aos="fade-up"
                                 className={`uh-faq-item ${activeFaq === index ? "active" : ""
                                     }`}
                                 key={index}

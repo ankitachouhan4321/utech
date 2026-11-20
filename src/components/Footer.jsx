@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import FloatingButtons from '../components/FloatingButtons';
+
 const Footer = () => {
   const [email, setEmail] = useState("");
 
@@ -21,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-
+    <>
     <footer className="uh-footer">
 
       {/* NEWSLETTER SECTION */}
@@ -103,6 +105,28 @@ const Footer = () => {
                 different sizes and specifications to
                 meet diverse industrial requirements.
               </p>
+                <div className="uh-footer-social-wrap">
+
+                  <div className="uh-footer-social">
+                    <a
+                      href="https://www.facebook.com/UTechHydraulic07/"
+                      aria-label="Facebook"
+                    >
+                      <i className="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                      href="https://www.youtube.com/@UTECHHYDRAULIC"
+                      aria-label="YouTube"
+                    >
+                      <i className="fa-brands fa-youtube"></i>
+                    </a>
+
+                
+
+                  </div>
+
+                </div>
 
               <div className="uh-footer-watermark">
                 U-Tech
@@ -129,48 +153,57 @@ const Footer = () => {
                 </Link>
 
                 <Link to="/">
-                  Our Products
-                </Link>
-
-                <Link to="/">
                   Contact Us
                 </Link>
 
-                <Link to="/">
-                  Hydraulic Power Packs
-                </Link>
-
-                <Link to="/">
-                  Scissor Lift Cylinders
-                </Link>
-
-                <Link to="/">
-                  Hydraulic Press Machines
-                </Link>
-
-                <Link to="/">
-                  Hydraulic Baling Presses
-                </Link>
 
               </div>
 
             </div>
 
+              {/* COLUMN 2 - USEFUL LINKS */}
+              <div className="uh-footer-links">
+
+                <h3 className="uh-footer-title">
+                  Useful Links
+                </h3>
+
+                <div className="uh-footer-links-grid">
+
+                  <Link to="/">
+                    Hydraulic Power Packs
+                  </Link>
+
+                  <Link to="/">
+                    Scissor Lift Cylinders
+                  </Link>
+
+                  <Link to="/">
+                    Hydraulic Press Machines
+                  </Link>
+
+                  <Link to="/">
+                    Hydraulic Baling Presses
+                  </Link>
+
+                </div>
+
+              </div>
+
             {/* COLUMN 3 - CONTACT DETAILS */}
             <div className="uh-footer-contact">
 
-              <div className="uh-footer-contact-group">
+                <div className="uh-footer-phone">
 
-                <h3 className="uh-footer-title">
-                  Office Address
-                </h3>
+                  <h3 className="uh-footer-title">
+                    Call Us
+                  </h3>
 
-                <p>
-                  Khasra No. 83/16, Plot No. 31, Gali No. 1, Firni Road Industrial Area, Mundka, New Delhi - 110041, India
+                  <a href="tel:+919899930108">
+                    +91 98999 30108
+                  </a>
 
-                </p>
-
-              </div>
+                </div>
 
               <div className="uh-footer-contact-group">
 
@@ -179,72 +212,35 @@ const Footer = () => {
                 </h3>
 
                 <p>
-                  For product enquiries and quotations:
-                  <br />
-
+                 
                   <a href="mailto:abc@example.com">
                     abc@example.com
                   </a>
                 </p>
 
               </div>
+                
+                <div className="uh-footer-contact-group">
+
+                  <h3 className="uh-footer-title">
+                    Office Address
+                  </h3>
+
+                  <p>
+                    Khasra No. 83/16, Plot No. 31, Gali No. 1, Firni Road Industrial Area, Mundka, New Delhi - 110041, India
+
+                  </p>
+
+                </div>
+
+              
 
             </div>
 
             {/* COLUMN 4 - PHONE & SOCIAL */}
             <div className="uh-footer-last">
 
-              <div className="uh-footer-phone">
-
-                <h3 className="uh-footer-title">
-                  Call Us
-                </h3>
-
-                <a href="tel:+919899930108">
-                  +91 98999 30108
-                </a>
-
-              </div>
-
-              <div className="uh-footer-social-wrap">
-
-                <h3 className="uh-footer-title">
-                  Follow U-Tech Hydraulic
-                </h3>
-
-                <div className="uh-footer-social">
-
-                  <a
-                    href="#"
-                    aria-label="LinkedIn"
-                  >
-                    <i className="fa-brands fa-linkedin-in"></i>
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="Instagram"
-                  >
-                    <i className="fa-brands fa-instagram"></i>
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="YouTube"
-                  >
-                    <i className="fa-brands fa-youtube"></i>
-                  </a>
-
-                  <a
-                    href="#"
-                    aria-label="Facebook"
-                  >
-                    <i className="fa-brands fa-facebook-f"></i>
-                  </a>
-
-                </div>
-
-              </div>
+             
 
             </div>
 
@@ -283,17 +279,14 @@ const Footer = () => {
 
       </div>
 
-      {/* SCROLL TO TOP */}
-      <button
-        type="button"
-        className="uh-footer-scroll-top"
-        onClick={scrollToTop}
-        aria-label="Scroll to top"
-      >
-        <i className="fa-solid fa-arrow-up"></i>
-      </button>
+    
 
     </footer>
+
+    <FloatingButtons/>
+
+  
+    </>
 
   );
 };

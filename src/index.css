@@ -56,30 +56,120 @@
 .sub-heading::before {
   content: "";
   display: inline-block;
-  width: 9px;
-  height: 9px;
-
-  background: var(--uh-primary);
-
-  clip-path: polygon(0 0, 65% 0, 100% 35%, 100% 100%, 35% 100%, 0 65%);
-
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
+
+  background-color: var(--uh-primary);
+
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42'/%3E%3Ccircle cx='12' cy='12' r='7'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42'/%3E%3Ccircle cx='12' cy='12' r='7'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+
+  transition: transform 0.4s ease;
 }
 
-/* Main Section Heading */
+/* ==========================================
+   U-TECH COMMON HEADING STYLE
+========================================== */
+
 .heading {
   color: var(--uh-heading);
-
   font-family: "Poppins", sans-serif;
   font-size: clamp(32px, 3.2vw, 52px);
   font-weight: 700;
-
   line-height: 1.12;
   letter-spacing: -1.5px;
-
   margin: 0 0 28px;
+
+  /* Light Background Shimmer */
+  background: linear-gradient(
+    105deg,
+    var(--uh-heading) 0%,
+    var(--uh-heading) 35%,
+    var(--uh-primary) 47%,
+    #ff9292 51%,
+    var(--uh-primary) 55%,
+    var(--uh-heading) 67%,
+    var(--uh-heading) 100%
+  );
+
+  background-size: 250% 100%;
+  background-position: 100% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: uhShimmer 4s linear infinite;
 }
 
+/* ==========================================
+   DARK BACKGROUND HEADING
+========================================== */
+
+.heading.heading-dark {
+  color: #ffffff;
+
+  background: linear-gradient(
+    105deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    var(--uh-primary) 46%,
+    #ffb1b1 51%,
+    var(--uh-primary) 56%,
+    #ffffff 67%,
+    #ffffff 100%
+  );
+
+  background-size: 250% 100%;
+  background-position: 100% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+   CONTINUOUS SHIMMER ANIMATION
+========================================== */
+
+@keyframes uhShimmer {
+  from {
+    background-position: 100% 50%;
+  }
+
+  to {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 575px) {
+  .heading {
+    font-size: clamp(29px, 7vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .heading,
+  .heading.heading-dark {
+    animation: none;
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
 
 /* Button Wrapper start*/
 .uh-buttons {
@@ -329,7 +419,7 @@
   display: inline-block;
   font-size: 22px;
   font-weight: 500;
-  color: var(--uh-light);
+  color: var(--primary);
   margin-bottom: 18px;
 }
 
@@ -565,10 +655,10 @@
     font-size: 15px;
     line-height: 1.7;
   }
-      .uh-watermark {
-        font-size: 40px;
-        top: 40px;
-    }
+  .uh-watermark {
+    font-size: 40px;
+    top: 40px;
+  }
 }
 
 /* header start */
@@ -1468,7 +1558,7 @@ a.top-header-item:hover {
 
 .uh-footer-main {
   position: relative;
-  padding: 80px 0 80px;
+  padding: 80px 0 0px;
 
   background-color: #071127;
 
@@ -1489,7 +1579,7 @@ a.top-header-item:hover {
 
 .uh-footer-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1.15fr 0.95fr 0.85fr;
+      grid-template-columns: 1.15fr 1.15fr 0.95fr 2fr;
   gap: 65px;
 }
 
@@ -1590,7 +1680,7 @@ a.top-header-item:hover {
 
 .uh-footer-links-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
   column-gap: 30px;
   row-gap: 19px;
 }
@@ -1814,7 +1904,7 @@ a.top-header-item:hover {
   }
 
   .uh-footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1.5fr 1fr 1fr 2fr;
     gap: 55px 45px;
   }
 
@@ -1855,7 +1945,7 @@ a.top-header-item:hover {
   }
 
   .uh-footer-main {
-    padding: 175px 0 75px;
+    padding: 70px 0 75px;
   }
 }
 
@@ -2373,106 +2463,204 @@ a.top-header-item:hover {
 
 /* }  why-choose end */
 
-.uh-industries-section {
-  background: var(--uh-bg-light, #f7f8fa);
-  padding: 50px 0 50px;
+/* ==========================================
+   U-TECH HYDRAULIC - INDUSTRIES WE SERVE
+========================================== */
+
+#indus {
+  scroll-margin-top: 100px;
 }
 
-.uh-industries-heading {
+.home-industries-section {
+  position: relative;
+  width: 100%;
+  background: var(--uh-white);
+  overflow: hidden;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.home-industries-section .sub-heading {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.home-industries-section .heading {
+  margin-bottom: 20px;
+}
+
+/* Heading Description */
+
+.home-industries-intro {
+  max-width: 720px;
+  color: var(--uh-text-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   INDUSTRY CARD
+========================================== */
+
+.home-industry-card {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--uh-white);
+  border: 1px solid var(--uh-border-light);
+  border-radius: 8px;
+
+  box-shadow: 0 8px 25px rgba(16, 27, 53, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* ==========================================
+   INDUSTRY IMAGE
+========================================== */
+
+.home-industry-image {
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  background: var(--primary-hover);
+}
+
+.home-industry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* ==========================================
+   INDUSTRY TITLE BAR
+========================================== */
+
+.home-industry-title {
+  min-height: 55px;
+  padding: 15px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 55px;
+
+  background: var(--uh-secondary);
+  border-bottom: 3px solid var(--uh-primary);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.uh-industries-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 30px 10px;
-}
-
-.uh-industry-item {
-  text-align: center;
-  padding: 5px 12px;
-  transition: transform 0.3s ease;
-}
-
-.uh-industry-item:hover {
-  transform: translateY(-5px);
-}
-
-.uh-industry-icon {
-  font-size: 46px;
-  color: var(--primary);
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.uh-industry-item h3 {
-  font-size: 19px;
-  color: #333333;
+.home-industry-title h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.4;
-  margin: 0 0 8px;
+  color: var(--uh-white);
+
+  margin: 0;
+
+  transition: color 0.3s ease;
 }
 
-.uh-industry-item p {
-  color: #707070;
-  font-size: 14px;
-  line-height: 1.9;
-  margin: 0 auto;
-  max-width: 250px;
+/* ==========================================
+   HOVER EFFECTS
+========================================== */
+
+.home-industry-card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--uh-primary);
+
+  box-shadow: 0 15px 35px rgba(16, 27, 53, 0.15);
 }
 
-/* Tablet */
-@media (max-width: 991px) {
-  .uh-industries-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 38px 25px;
-  }
+/* Image Zoom */
 
-  .uh-industries-heading h2 {
-    font-size: 32px;
+.home-industry-card:hover .home-industry-image img {
+  transform: scale(1.07);
+  filter: saturate(1.08);
+}
+
+/* Red Title Bar on Hover */
+
+.home-industry-card:hover .home-industry-title {
+  background: var(--uh-primary);
+  border-bottom-color: var(--uh-primary-hover);
+}
+
+/* ==========================================
+   RESPONSIVE - LARGE SCREEN
+========================================== */
+
+@media (max-width: 1199.98px) {
+  .home-industry-image {
+    height: 260px;
   }
 }
 
-/* Mobile */
-@media (max-width: 575px) {
-  .uh-industries-heading {
-    margin-bottom: 35px;
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 991.98px) {
+  .home-industry-image {
+    height: 280px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 767.98px) {
+  .home-industry-image {
+    height: 250px;
   }
 
-  .uh-industries-heading h2 {
-    font-size: 28px;
-  }
-
-  .uh-industries-heading p {
+  .home-industry-title h3 {
     font-size: 14px;
   }
 
-  .uh-industries-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 12px;
-  }
-
-  .uh-industry-item {
-    padding: 0 4px;
-  }
-
-  .uh-industry-icon {
-    font-size: 36px;
-    margin-bottom: 12px;
-  }
-
-  .uh-industry-item h3 {
-    font-size: 16px;
-  }
-
-  .uh-industry-item p {
-    font-size: 12px;
-    line-height: 1.7;
+  .home-industries-intro {
+    font-size: 14px;
   }
 }
 
-/* industries end */
+@media (max-width: 575.98px) {
+  .home-industry-image {
+    height: 270px;
+  }
+
+  .home-industry-title {
+    min-height: 55px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-industry-card,
+  .home-industry-image img,
+  .home-industry-title,
+  .home-industry-title h3 {
+    transition: none;
+  }
+}
 
 /* FAQ SECTION */
 
@@ -3074,9 +3262,929 @@ a.top-header-item:hover {
 }
 /* testimonial end */
 
-@media (max-width:575px) {
-    .heading br {
-  display: none !important;
+@media (max-width: 575px) {
+  .heading br {
+    display: none !important;
+  }
 }
-    
+
+/* testimonial end */
+
+/* ============================================
+   U-TECH HYDRAULIC
+   PREMIUM ANIMATED FLOATING BUTTONS
+============================================ */
+
+:root {
+  --uh-float-primary: var(--uh-primary, #c51c30);
+  --uh-float-dark: #191919;
+  --uh-float-whatsapp: #25d366;
+}
+
+/* ============================================
+   LEFT SIDE SOCIAL MEDIA ICONS
+============================================ */
+
+.uh-floating-social {
+  position: fixed;
+  left: 18px;
+  bottom: 90px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Common Social Icon */
+
+.uh-social-icon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  color: #ffffff;
+  font-size: 19px;
+  text-decoration: none;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+
+  animation: uhSocialFloating 3s ease-in-out infinite;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+/* ============================================
+   ORIGINAL SOCIAL MEDIA BRAND COLORS
+============================================ */
+
+/* Facebook */
+
+.uh-social-icon:has(.fa-facebook-f) {
+  background: #1877f2;
+}
+
+/* Instagram */
+
+.uh-social-icon:has(.fa-instagram) {
+  background: linear-gradient(
+    45deg,
+    #feda75 0%,
+    #fa7e1e 25%,
+    #d62976 50%,
+    #962fbf 75%,
+    #4f5bd5 100%
+  );
+}
+
+/* YouTube */
+
+.uh-social-icon:has(.fa-youtube) {
+  background: #ff0033;
+}
+
+/* LinkedIn */
+
+.uh-social-icon:has(.fa-linkedin-in) {
+  background: #0a66c2;
+}
+
+/* ============================================
+   STAGGERED SOCIAL ANIMATION
+============================================ */
+
+.uh-social-icon:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.uh-social-icon:nth-child(2) {
+  animation-delay: -0.6s;
+}
+
+.uh-social-icon:nth-child(3) {
+  animation-delay: -1.2s;
+}
+
+.uh-social-icon:nth-child(4) {
+  animation-delay: -1.8s;
+}
+
+@keyframes uhSocialFloating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* ============================================
+   SOCIAL MEDIA HOVER EFFECT
+============================================ */
+
+.uh-social-icon:hover {
+  animation-play-state: paused;
+
+  transform: translateY(-4px) scale(1.1);
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.27);
+}
+
+.uh-social-icon i {
+  transition: transform 0.35s ease;
+}
+
+.uh-social-icon:hover i {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* ============================================
+   SOCIAL MEDIA TOOLTIPS
+============================================ */
+
+.uh-social-tooltip {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+
+  transform: translateY(-50%) translateX(-8px);
+
+  background: var(--uh-float-dark);
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  padding: 9px 13px;
+  border-radius: 6px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.uh-social-icon:hover .uh-social-tooltip,
+.uh-social-icon:focus-visible .uh-social-tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ============================================
+   RIGHT SIDE FLOATING BUTTONS
+============================================ */
+
+.uh-floating-contact {
+  position: fixed;
+  right: 18px;
+  bottom: 85px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Common Button Design */
+
+.uh-float-btn {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border-radius: 50%;
+  border: none;
+
+  color: #ffffff;
+  font-size: 23px;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.uh-float-btn i {
+  transition: transform 0.3s ease;
+}
+
+/* ============================================
+   WHATSAPP BUTTON
+============================================ */
+
+.uh-whatsapp {
+  background: var(--uh-float-whatsapp);
+  color: #ffffff;
+  font-size: 29px;
+
+  animation: uhWhatsAppFloating 2.8s ease-in-out infinite;
+}
+
+/* WhatsApp Continuous Animation */
+
+@keyframes uhWhatsAppFloating {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.45),
+      0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.04);
+
+    box-shadow:
+      0 0 0 12px rgba(37, 211, 102, 0),
+      0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* WhatsApp Hover */
+
+.uh-whatsapp:hover {
+  animation-play-state: paused;
+  transform: translateY(-5px) scale(1.1);
+
+  background: #1ebe5d;
+  color: #ffffff;
+}
+
+.uh-whatsapp:hover i {
+  transform: scale(1.15);
+}
+
+/* ============================================
+   CALL BUTTON
+============================================ */
+
+.uh-call {
+  background: var(--uh-float-primary);
+  color: #ffffff;
+
+  animation: uhCallFloating 3.2s ease-in-out infinite;
+}
+
+/* Call Button Pulse */
+
+@keyframes uhCallFloating {
+  0%,
+  100% {
+    transform: translateY(0);
+
+    box-shadow:
+      0 0 0 0 rgba(197, 28, 48, 0.4),
+      0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    transform: translateY(-5px);
+
+    box-shadow:
+      0 0 0 10px rgba(197, 28, 48, 0),
+      0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Continuous Phone Ringing */
+
+.uh-call i {
+  animation: uhPhoneRing 3s ease-in-out infinite;
+}
+
+@keyframes uhPhoneRing {
+  0%,
+  70%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  75%,
+  85%,
+  95% {
+    transform: rotate(-18deg);
+  }
+
+  80%,
+  90% {
+    transform: rotate(18deg);
+  }
+}
+
+/* Call Hover */
+
+.uh-call:hover {
+  animation-play-state: paused;
+
+  transform: translateY(-5px) scale(1.1);
+
+  background: var(--uh-float-primary);
+  color: #ffffff;
+}
+
+.uh-call:hover i {
+  animation-play-state: paused;
+  transform: scale(1.15);
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+============================================ */
+
+.uh-back-top {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+
+  background: var(--uh-float-dark);
+  color: #ffffff;
+
+  font-size: 18px;
+
+  border: 2px solid var(--uh-float-primary);
+
+  animation: uhBackTopFloat 3s ease-in-out infinite;
+}
+
+/* Back to Top Floating */
+
+@keyframes uhBackTopFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Continuous Arrow Movement */
+
+.uh-back-top i {
+  animation: uhArrowUp 1.5s ease-in-out infinite;
+}
+
+@keyframes uhArrowUp {
+  0%,
+  100% {
+    transform: translateY(3px);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Back to Top Hover */
+
+.uh-back-top:hover {
+  animation-play-state: paused;
+
+  transform: translateY(-5px) scale(1.1);
+
+  background: var(--uh-float-primary);
+  color: #ffffff;
+}
+
+.uh-back-top:hover i {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   RIGHT SIDE TOOLTIPS
+============================================ */
+
+.uh-float-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+
+  transform: translateY(-50%) translateX(8px);
+
+  background: var(--uh-float-dark);
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  padding: 9px 13px;
+  border-radius: 6px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.uh-float-btn:hover .uh-float-tooltip,
+.uh-float-btn:focus-visible .uh-float-tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ============================================
+   KEYBOARD ACCESSIBILITY
+============================================ */
+
+.uh-social-icon:focus-visible,
+.uh-float-btn:focus-visible {
+  outline: 3px solid var(--uh-float-primary);
+  outline-offset: 4px;
+}
+
+/* ============================================
+   TABLET RESPONSIVE
+============================================ */
+
+@media (max-width: 991px) {
+  .uh-floating-social {
+    left: 12px;
+    bottom: 80px;
+  }
+
+  .uh-floating-contact {
+    right: 12px;
+    bottom: 80px;
+    gap: 12px;
+  }
+
+  .uh-social-icon {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+    font-size: 17px;
+  }
+
+  .uh-float-btn {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 21px;
+  }
+
+  .uh-back-top {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 17px;
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+============================================ */
+
+@media (max-width: 575px) {
+  /* Left Side */
+
+  .uh-floating-social {
+    left: 10px;
+    bottom: 20px;
+    gap: 7px;
+  }
+
+  .uh-social-icon {
+    border-radius: 9px;
+  }
+
+  /* Right Side */
+
+  .uh-floating-contact {
+    right: 10px;
+    bottom: 20px;
+    gap: 12px;
+  }
+
+  .uh-float-btn {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 19px;
+  }
+
+  .uh-whatsapp {
+    font-size: 25px;
+  }
+
+  .uh-back-top {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 15px;
+  }
+
+  /* Hide Tooltips on Mobile */
+
+  .uh-social-tooltip,
+  .uh-float-tooltip {
+    display: none;
+  }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE
+============================================ */
+
+@media (max-width: 380px) {
+  .uh-floating-social {
+    left: 7px;
+    gap: 5px;
+  }
+
+  .uh-floating-contact {
+    right: 7px;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION ACCESSIBILITY
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .uh-social-icon,
+  .uh-social-icon i,
+  .uh-whatsapp,
+  .uh-call,
+  .uh-call i,
+  .uh-back-top,
+  .uh-back-top i {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* float icon end */
+
+/* ==========================================
+   U-TECH HYDRAULIC CATEGORY SECTION
+========================================== */
+
+#category-sec {
+  position: relative;
+
+  background: linear-gradient(180deg, var(--uh-white) 0%, var(--uh-light) 100%);
+
+  overflow: hidden;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+#category-sec .sub-heading {
+  justify-content: center;
+  color: var(--uh-primary);
+  margin-bottom: 20px;
+}
+
+#category-sec .heading {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 3.2vw, 52px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+
+  /* Preserve your existing shimmer animation */
+}
+
+/* ==========================================
+   CATEGORY SLIDER
+========================================== */
+
+.category-slider-wrap {
+  position: relative;
+  padding: 12px 4px 18px;
+}
+
+.categorySwiper {
+  width: 100%;
+  padding: 12px 5px 25px;
+}
+
+.categorySwiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* ==========================================
+   CATEGORY CARD
+========================================== */
+
+.category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  background: var(--uh-white);
+
+  border: 1px solid var(--uh-border-light);
+  border-bottom: 3px solid var(--btn-normal);
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 35px rgba(16, 27, 53, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-9px);
+
+  border-bottom-color: var(--uh-primary);
+}
+
+/* ==========================================
+   CATEGORY IMAGE
+========================================== */
+
+.category-img {
+  position: relative;
+  /* height: 260px; */
+
+  overflow: hidden;
+
+  background: var(--uh-bg-light);
+
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 12% 100%, 0 94%);
+}
+
+.category-img::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  /* background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(16, 27, 53, 0.23) 100%
+  ); */
+
+  pointer-events: none;
+}
+
+.category-img img {
+  display: block;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.55s ease,
+    filter 0.55s ease;
+}
+
+.category-card:hover .category-img img {
+  transform: scale(1.08);
+  filter: contrast(1.04) saturate(1.08);
+}
+
+/* ==========================================
+   CATEGORY CONTENT
+========================================== */
+
+.category-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 25px 15px 27px;
+}
+
+.category-body h4 {
+  color: var(--uh-heading);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  margin-bottom: 16px;
+
+  transition: color 0.3s ease;
+}
+
+.category-card:hover .category-body h4 {
+  color: var(--uh-primary);
+}
+
+/* ==========================================
+   CATEGORY LINK
+========================================== */
+
+.category-link {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  color: var(--uh-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.category-link i {
+  font-size: 15px;
+
+  transition: transform 0.3s ease;
+}
+
+.category-link:hover {
+  color: var(--uh-primary-hover);
+}
+
+.category-link:hover i,
+.category-card:hover .category-link i {
+  transform: translate(4px, -4px);
+}
+
+/* ==========================================
+   NAVIGATION BUTTONS
+========================================== */
+
+.category-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-nav button {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--uh-white);
+
+  color: var(--uh-heading);
+
+  border: 1px solid var(--uh-border-light);
+  border-radius: 50%;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(16, 27, 53, 0.1);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.category-nav button:hover {
+  background: var(--uh-primary);
+  border-color: var(--uh-primary);
+
+  color: var(--uh-white);
+
+  transform: translateY(-3px);
+}
+
+.category-nav button:focus-visible,
+.category-link:focus-visible {
+  outline: 3px solid var(--uh-primary);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media (max-width: 991px) {
+  .category-img {
+    height: 240px;
+  }
+
+  .category-body {
+    padding: 22px 15px 24px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+  #category-sec .heading {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .category-nav {
+    justify-content: center;
+  }
+
+  .category-img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 575px) {
+  #category-sec .heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .category-body {
+    padding: 20px 15px 23px;
+  }
+
+  .category-body h4 {
+    font-size: 17px;
+  }
+
+  .category-img {
+    height: 250px;
+  }
+
+  .category-link {
+    font-size: 13px;
+  }
+
+  .category-nav button {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card,
+  .category-img img,
+  .category-body h4,
+  .category-link,
+  .category-link i,
+  .category-nav button {
+    transition: none;
+  }
 }

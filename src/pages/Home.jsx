@@ -5,6 +5,7 @@ import MovingStrips from '../components/MovingStrips'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import UTechFAQ from '../components/UTechFAQ'
+import CategorySection from '../components/CategorySection';
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -175,16 +176,16 @@ const Home = () => {
                         <div className="uh-hero-left">
 
 
-                            <span className="uh-top-text">
+                            <span className="uh-top-text" data-aos="fade-right">
                                 Trusted Hydraulic Solutions Since 2014
                             </span>
 
-                            <h2 className="uh-main-heading">
+                            <h2 className="uh-main-heading" data-aos="fade-right">
                                 U-Tech Hydraulic <br /> Manufacturer, Supplier <br /> & Trader of Hydraulic Machinery
                             </h2>
 
 
-                            <p className="uh-description">
+                            <p className="uh-description" data-aos="fade-up">
                                 U-Tech Hydraulic is a manufacturer, supplier
                                 and trader of industrial hydraulic machinery
                                 and components. We offer hydraulic power packs,
@@ -194,7 +195,7 @@ const Home = () => {
                             </p>
 
                             {/* Hero Button */}
-                            <div className="uh-hero-buttons">
+                            <div className="uh-hero-buttons" data-aos="fade-up">
 
                                 <a href="/" className="main-btn">
                                     <span>Explore Products</span>
@@ -206,7 +207,7 @@ const Home = () => {
                         </div>
 
                         {/* Right Info Card */}
-                        <div className="uh-hero-right">
+                        <div className="uh-hero-right" data-aos="zoom-in">
 
                             <div className="uh-info-card">
 
@@ -268,114 +269,196 @@ const Home = () => {
 
             {/* hero-banner end */}
 
-            {/* industries start */}
-            <section className="uh-industries-section">
-                <div className="container">
+            {/* category start */}
 
-                    <div className="uh-industries-heading">
-                        <h2 className='heading'>Industries We Serve</h2>
-                        <p>
-                            Reliable hydraulic solutions designed for different
-                            industrial applications and operational needs.
-                        </p>
+<section
+                id="category-sec"
+                className="py-lg-5 py-3 side-space"
+            >
+                <div className="container-lg">
+
+                    {/* SECTION HEADING */}
+                    <div className="row text-center mb-4">
+                        <div className="col-12">
+
+                            <h2 className="heading mb-0" data-aos="fade-up">
+                                Explore Our 
+                                Hydraulic Machinery Categories
+                            </h2>
+
+                        </div>
                     </div>
 
-                    <div className="uh-industries-grid">
+                    {/* CATEGORY SLIDER */}
+                    <div className="position-relative category-slider-wrap">
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-industry"></i>
-                            </div>
-                            <h3>Manufacturing</h3>
-                            <p>
-                                Hydraulic power packs and presses for efficient
-                                production and industrial machinery operations.
-                            </p>
-                        </div>
+                        <Swiper
+                            modules={[Navigation, Autoplay]}
+                            spaceBetween={24}
+                            slidesPerView={1}
+                            loop={true}
+                            autoplay={{
+                                delay: 2800,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
+                            }}
+                            navigation={{
+                                nextEl: ".category-next",
+                                prevEl: ".category-prev",
+                            }}
+                            breakpoints={{
+                                576: {
+                                    slidesPerView: 2,
+                                },
+                                992: {
+                                    slidesPerView: 3,
+                                },
+                                1200: {
+                                    slidesPerView: 4,
+                                },
+                                1600: {
+                                    slidesPerView: 5,
+                                },
+                            }}
+                            className="categorySwiper"
+                        >
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-car"></i>
-                            </div>
-                            <h3>Automotive</h3>
-                            <p>
-                                Hydraulic solutions for component pressing,
-                                assembly processes, and automotive production.
-                            </p>
-                        </div>
+                            {/* 01 - Hydraulic Power Pack */}
+                            <SwiperSlide>
+                                <div className="category-card">
+                                    <div className="category-img">
+                                        <img
+                                            src="/img/prod-1.png"
+                                            alt="Hydraulic Power Pack"
+                                            loading="lazy"
+                                        />
+                                    </div>
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-helmet-safety"></i>
-                            </div>
-                            <h3>Construction</h3>
-                            <p>
-                                Durable hydraulic cylinders for lifting,
-                                movement, and heavy-duty equipment applications.
-                            </p>
-                        </div>
+                                    <div className="category-body">
+                                        <h4>Hydraulic Power Pack</h4>
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-dolly"></i>
-                            </div>
-                            <h3>Material Handling</h3>
-                            <p>
-                                Hydraulic cylinders and power units for smooth
-                                lifting, positioning, and load-handling operations.
-                            </p>
-                        </div>
+                                        <Link
+                                            to="/hydraulic-power-packs"
+                                            className="category-link"
+                                        >
+                                            Explore Category
+                                            <i className="bi bi-arrow-up-right ms-2"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-gears"></i>
-                            </div>
-                            <h3>Steel & Metal</h3>
-                            <p>
-                                Hydraulic presses and cylinders for metal
-                                forming, pressing, and fabrication applications.
-                            </p>
-                        </div>
+                            {/* 02 - Hydraulic Cylinders */}
+                            <SwiperSlide>
+                                <div className="category-card">
+                                    <div className="category-img">
+                                        <img
+                                            src="/img/prod-4.png"
+                                            alt="Hydraulic Cylinders"
+                                            loading="lazy"
+                                        />
+                                    </div>
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-recycle"></i>
-                            </div>
-                            <h3>Recycling & Scrap</h3>
-                            <p>
-                                Hydraulic baling equipment for compressing
-                                recyclable materials and managing industrial waste.
-                            </p>
-                        </div>
+                                    <div className="category-body">
+                                        <h4>Hydraulic Cylinders</h4>
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-box-open"></i>
-                            </div>
-                            <h3>Paper & Packaging</h3>
-                            <p>
-                                Hydraulic paper baling presses for compacting
-                                paper waste and improving material storage.
-                            </p>
-                        </div>
+                                        <Link
+                                            to="/hydraulic-cylinders"
+                                            className="category-link"
+                                        >
+                                            Explore Category
+                                            <i className="bi bi-arrow-up-right ms-2"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
 
-                        <div className="uh-industry-item">
-                            <div className="uh-industry-icon">
-                                <i className="fa-solid fa-bottle-water"></i>
-                            </div>
-                            <h3>Plastic & PET</h3>
-                            <p>
-                                Hydraulic baling machines for compressing PET
-                                bottles and plastic recyclable materials.
-                            </p>
-                        </div>
+                            {/* 03 - Hydraulic Press Machine */}
+                            <SwiperSlide>
+                                <div className="category-card">
+                                    <div className="category-img">
+                                        <img
+                                            src="/img/prod-6.png"
+                                            alt="Hydraulic Press Machine "
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    <div className="category-body">
+                                        <h4>Hydraulic Press Machine </h4>
+
+                                        <Link
+                                            to="/hydraulic-power-press"
+                                            className="category-link"
+                                        >
+                                            Explore Category
+                                            <i className="bi bi-arrow-up-right ms-2"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+
+                            {/* 04 - Hydraulic Deep Drawing Machine */}
+                            <SwiperSlide>
+                                <div className="category-card">
+                                    <div className="category-img">
+                                        <img
+                                            src="/img/prod-7.png"
+                                            alt="Hydraulic Deep Drawing Machine "
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    <div className="category-body">
+                                        <h4>Hydraulic Deep Drawing Machine </h4>
+
+                                        <Link
+                                            to="/hydraulic-baling-press"
+                                            className="category-link"
+                                        >
+                                            Explore Category
+                                            <i className="bi bi-arrow-up-right ms-2"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+
+                            {/* 05 - Hydraulic Bailing Press */}
+                            <SwiperSlide>
+                                <div className="category-card">
+                                    <div className="category-img">
+                                        <img
+                                            src="/img/prod-8.png"
+                                            alt="Industrial Hydraulic Bailing Press"
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    <div className="category-body">
+                                        <h4>Hydraulic Bailing Press</h4>
+
+                                        <Link
+                                            to="/hydraulic-components"
+                                            className="category-link"
+                                        >
+                                            Explore Category
+                                            <i className="bi bi-arrow-up-right ms-2"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+
+                        </Swiper>
+
+                        
 
                     </div>
-
                 </div>
             </section>
 
-            {/* industries end */}
+            {/* category end */}
+
+       
 
             {/* about-sec start */}
 
@@ -390,9 +473,9 @@ const Home = () => {
                             <div className="uh-about-image-wrap">
 
                                 {/* Main Image */}
-                                <div className="uh-about-main-image">
+                                <div className="uh-about-main-image" data-aos="zoom-in">
                                     <img
-                                        src="/img/about-1.jpg"
+                                        src="/img/about-1.jpg" 
                                         alt="U-Tech Hydraulic manufacturing facility"
                                         loading="lazy"
                                     />
@@ -409,9 +492,9 @@ const Home = () => {
                                 </div>
 
                                 {/* Overlapping Bottom Image */}
-                                <div className="uh-about-small-image">
+                                <div className="uh-about-small-image" data-aos="zoom-in">
                                     <img
-                                        src="/img/about-2.png"
+                                        src="/img/about-2.png" 
                                         alt="U-Tech Hydraulic machinery manufacturing process"
                                         loading="lazy"
                                     />
@@ -427,16 +510,16 @@ const Home = () => {
                             <div className="uh-about-content">
 
                                 {/* Reusable Sub Heading */}
-                                <span className="sub-heading">
-                                    01 &nbsp; ABOUT U-TECH HYDRAULIC
+                                <span className="sub-heading" data-aos="fade-left">
+                                    &nbsp; ABOUT U-TECH HYDRAULIC
                                 </span>
 
                                 {/* Reusable Heading */}
-                                <h2 className="heading">
+                                <h2 className="heading" data-aos="fade-left">
                                     U-Tech Hydraulic <br /> Engineering Quality, <br />Delivering Reliability.
                                 </h2>
 
-                                <p className="uh-about-description">
+                                <p className="uh-about-description" data-aos="fade-up">
                                     Established in 2014, U-Tech Hydraulic is a manufacturer,
                                     supplier, and trader of hydraulic machinery and industrial
                                     components. Our product range includes Industrial Hydraulic
@@ -447,7 +530,7 @@ const Home = () => {
                                     models, and specifications.
                                 </p>
 
-                                <p className="uh-about-description">
+                                <p className="uh-about-description" data-aos="fade-up">
                                     Our well-equipped infrastructure supports manufacturing,
                                     quality checking, warehousing, and packaging. With a strong
                                     focus on research and development, we continuously improve
@@ -458,7 +541,7 @@ const Home = () => {
 
 
                                 {/* Existing Global Button */}
-                                <div className="uh-about-action">
+                                <div className="uh-about-action" data-aos="fade-up">
 
                                     <Link to="/about" className="main-btn">
                                         <span>More About Us</span>
@@ -492,16 +575,15 @@ const Home = () => {
 
                         <div className="uh-why-choose-left">
                             <div className="uh-section-tag">
-                                <span className="uh-dot"></span>
-                                <span className="uh-section-number">03</span>
-                                <span className="uh-section-text">WHY CHOOSE US</span>
+                          
+                                <span className="sub-heading" data-aos="fade-right">WHY CHOOSE US</span>
                             </div>
 
-                            <h2 className='heading'>
+                            <h2 className='heading heading-dark' data-aos="fade-right">
                                 Why Industries Choose U-Tech Hydraulic?
                             </h2>
 
-                            <p>
+                            <p data-aos="fade=-up">
                                 U-Tech Hydraulic provides reliable hydraulic equipment
                                 and practical solutions for a wide range of industrial
                                 applications. We focus on precision manufacturing,
@@ -512,7 +594,7 @@ const Home = () => {
 
                         <div className="uh-why-choose-right">
 
-                            <div className="uh-why-card">
+                            <div className="uh-why-card" data-aos="fade-up">
                                 <span>01</span>
                                 <p>
                                     <strong>In-House Manufacturing</strong>
@@ -522,7 +604,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-why-card">
+                            <div className="uh-why-card" data-aos="fade-up">
                                 <span>02</span>
                                 <p>
                                     <strong>Custom Hydraulic Solutions: </strong>
@@ -532,7 +614,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-why-card">
+                            <div className="uh-why-card" data-aos="fade-up">
                                 <span>03</span>
                                 <p>
                                     <strong>Quality-Focused Production: </strong>
@@ -542,7 +624,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-why-card">
+                            <div className="uh-why-card" data-aos="fade-up">
                                 <span>04</span>
                                 <p>
                                     <strong>Technical Knowledge & Experience: </strong>
@@ -552,7 +634,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-why-card">
+                            <div className="uh-why-card" data-aos="fade-up">
                                 <span>05</span>
                                 <p>
                                     <strong>Efficient Order Management: </strong>
@@ -562,7 +644,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-why-card">
+                            <div className="uh-why-card" data-aos="fade-up">
                                 <span>06</span>
                                 <p>
                                     <strong>Customer-Focused Support: </strong>
@@ -595,11 +677,11 @@ const Home = () => {
 
                             <div className="section-heading mb-0">
 
-                                <span className="sub-heading">
-                                    02 &nbsp; OUR PRODUCT RANGE
+                                <span className="sub-heading" data-aos="fade-up">
+                                     &nbsp; OUR PRODUCT RANGE
                                 </span>
 
-                                <h2 className="heading">
+                                <h2 className="heading" data-aos="fade-up">
                                     Quality Hydraulic Machinery
                                     <br />
                                     by U-Tech Hydraulic
@@ -607,7 +689,7 @@ const Home = () => {
 
                             </div>
 
-                            <p className="home-products-intro mt-3 mb-0">
+                            <p className="home-products-intro mt-3 mb-0" data-aos="fade-up">
                                 Explore our range of Industrial Hydraulic Power Packs,
                                 Scissor Lift Cylinders, Hydraulic Power Press Machines,
                                 Hydraulic Baling Presses, and Hydraulic Components.
@@ -764,16 +846,14 @@ const Home = () => {
                     <div className="uh-manufacturing-header">
 
                         <div className="uh-section-tag">
-                            <span className="uh-dot"></span>
-                            <span className="uh-section-number">04</span>
-                            <span className="uh-section-text">
+                           
+                            <span className="sub-heading" data-aos="fade-up">
                                 MANUFACTURING
                             </span>
                         </div>
 
-                        <h2>
-                            Advanced Manufacturing for Reliable
-                            Hydraulic Solutions
+                        <h2 className='heading' data-aos="fade-up">
+                            Advanced Manufacturing for Reliable Hydraulic Solutions
                         </h2>
 
                     </div>
@@ -782,7 +862,7 @@ const Home = () => {
                     <div className="uh-manufacturing-content">
 
                         {/* LEFT CONTENT */}
-                        <div className="uh-manufacturing-left">
+                        <div className="uh-manufacturing-left" data-aos="fade-right">
                             <p>
                                 At U-Tech Hydraulic, we have a dedicated
                                 manufacturing setup for a wide range of
@@ -802,7 +882,7 @@ const Home = () => {
                         {/* RIGHT FEATURES */}
                         <div className="uh-manufacturing-features">
 
-                            <div className="uh-manufacturing-feature">
+                            <div className="uh-manufacturing-feature" data-aos="fade-left">
                                 <div className="uh-feature-heading">
                                     <i className="fa-solid fa-gear"></i>
                                     <h3>Modern Infrastructure</h3>
@@ -813,7 +893,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-manufacturing-feature">
+                            <div className="uh-manufacturing-feature" data-aos="fade-left">
                                 <div className="uh-feature-heading">
                                     <i className="fa-solid fa-layer-group"></i>
                                     <h3>Quality Materials</h3>
@@ -824,7 +904,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-manufacturing-feature">
+                            <div className="uh-manufacturing-feature" data-aos="fade-left">
                                 <div className="uh-feature-heading">
                                     <i className="fa-solid fa-users"></i>
                                     <h3>Skilled Team</h3>
@@ -835,7 +915,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-manufacturing-feature">
+                            <div className="uh-manufacturing-feature" data-aos="fade-left">
                                 <div className="uh-feature-heading">
                                     <i className="fa-solid fa-shield-halved"></i>
                                     <h3>Process Control</h3>
@@ -846,7 +926,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-manufacturing-feature">
+                            <div className="uh-manufacturing-feature" data-aos="fade-left">
                                 <div className="uh-feature-heading">
                                     <i className="fa-solid fa-screwdriver-wrench"></i>
                                     <h3>Testing & Inspection</h3>
@@ -857,7 +937,7 @@ const Home = () => {
                                 </p>
                             </div>
 
-                            <div className="uh-manufacturing-feature">
+                            <div className="uh-manufacturing-feature" data-aos="fade-left">
                                 <div className="uh-feature-heading">
                                     <i className="fa-solid fa-cube"></i>
                                     <h3>Ready for Industrial Use</h3>
@@ -875,6 +955,99 @@ const Home = () => {
                 </div>
             </section>
 
+  
+            {/* ================= INDUSTRIES WE SERVE ================= */}
+            <section
+                className="home-industries-section py-5"
+                id="indus"
+            >
+                <div className="container">
+
+                    {/* Global Heading */}
+                    <div className="text-center mb-5">
+
+
+                        <h2 className="heading" data-aos="fade-up">
+                            Industries We Serve
+                          
+                        </h2>
+
+                        <p className="home-industries-intro mx-auto mt-3 mb-0" data-aos="fade-up">
+                            U-Tech Hydraulic manufactures and supplies
+                            hydraulic machinery, power packs, cylinders,
+                            and industrial equipment for manufacturing,
+                            construction, automotive, fabrication, and
+                            other industrial applications.
+                        </p>
+
+                    </div>
+
+                    {/* Industries Grid */}
+                    <div className="row g-4 justify-content-center">
+
+                        {[
+                            {
+                                title: "Manufacturing Industries",
+                                image: "/img/ind-1.jpg",
+                            },
+                            {
+                                title: "Metal Fabrication",
+                                image: "/img/ind-2.jpg",
+                            },
+                            {
+                                title: "Construction Industry",
+                                image: "/img/ind-3.jpg",
+                            },
+                            {
+                                title: "Automotive Industry",
+                                image: "/img/ind-4.jpg",
+                            },
+                            {
+                                title: "Engineering Workshops",
+                                image: "/img/ind-5.jpg",
+                            },
+                            {
+                                title: "Steel & Metal Processing",
+                                image: "/img/ind-6.jpg",
+                            },
+                            {
+                                title: "Industrial Maintenance",
+                                image: "/img/ind-7.jpg",
+                            },
+                        ].map((industry, index) => (
+
+                            <div
+                                className="col-xl-3 col-lg-4 col-md-6"
+                                key={index}
+                            >
+                                <div className="home-industry-card h-100" data-aos="fade-up">
+
+                                    {/* Industry Image */}
+                                    <div className="home-industry-image">
+                                        <img
+                                            src={industry.image}
+                                            alt={industry.title}
+                                            className="img-fluid w-100"
+                                            loading="lazy"
+                                        />
+                                    </div>
+
+                                    {/* Industry Name */}
+                                    <div className="home-industry-title">
+                                        <h3 className="mb-0">
+                                            {industry.title}
+                                        </h3>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        ))}
+
+                    </div>
+                </div>
+            </section>
+            {/* ================= INDUSTRIES END ================= */}
 
             {/* faq start */}
             <UTechFAQ />
@@ -886,15 +1059,15 @@ const Home = () => {
 
                     {/* Global Heading */}
                     <div className="text-center mb-5">
-                        <span className="sub-heading">
-                            Customer Feedback
+                        <span className="sub-heading" data-aos="fade-up">
+                           Customer Feedback
                         </span>
 
-                        <h2 className="heading">
+                        <h2 className="heading" data-aos="fade-up">
                             What Our Customers Say
                         </h2>
 
-                        <p className="home-testimonial-intro mx-auto mt-3 mb-0">
+                        <p className="home-testimonial-intro mx-auto mt-3 mb-0" data-aos="fade-up">
                             We value the trust of our customers and focus on
                             understanding their welding and industrial
                             safety product requirements.
