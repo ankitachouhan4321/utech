@@ -92,7 +92,7 @@ const UTechFAQ = () => {
 
                         </div>
                     </div>
-                    <div class="col-lg-6 mt-lg-0 mt-4">
+                    <div class="col-lg-6 mt-lg-0 mt-4" data-aos="zoom-in">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.328936061964!2d77.01952307604698!3d28.67980538193079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d058371dc8289%3A0x9cfc84c1d5223dc2!2sU%20-%20TECH%20HYDRAULIC!5e0!3m2!1sen!2sin!4v1795237315212!5m2!1sen!2sin" width="100%" height="500" allowFullScreen="" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div>
