@@ -13,15 +13,16 @@ const FloatingButtons = () => {
       icon: "fa-brands fa-facebook-f",
           url: "https://www.facebook.com/UTechHydraulic07/",
     },
-    {
-      name: "Instagram",
-      icon: "fa-brands fa-instagram",
-        url: "",
-    },
+  
     {
       name: "YouTube",
       icon: "fa-brands fa-youtube",
         url: "https://www.youtube.com/@UTECHHYDRAULIC",
+    },
+    {
+      name: "Instagram",
+      icon: "fa-brands fa-instagram",
+      url: "https://www.instagram.com/",
     },
     {
       name: "LinkedIn",

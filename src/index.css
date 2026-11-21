@@ -3111,6 +3111,9 @@ a.top-header-item:hover {
   .uh-feature-heading h3 {
     font-size: 15px;
   }
+  .uh-manufacturing-feature{
+    padding: 20px 10px ;
+  }
 }
 
 /* testimonial start */
